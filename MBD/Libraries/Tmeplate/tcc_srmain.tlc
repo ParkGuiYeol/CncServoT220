@@ -1,0 +1,74 @@
+%% ==============================================================================
+%% 
+%% 
+%% 
+%%
+%% Abstract:
+%%   Example main for bare board target (single rate model)
+%%
+%% Copyright 1994-2013 The MathWorks, Inc.
+%%
+%selectfile NULL_FILE
+
+%function FcnSingleTaskingMain() void
+
+  
+  %if GenerateSampleERTMain
+    %assign ::CompiledModel.GenerateSampleERTMain = TLC_FALSE
+    %warning Overriding example ert_main.c!
+  %endif
+
+  %openfile tmpBuf
+  
+  %<SLibDeclareFcnProtoCtlVariables()>\
+  
+  %<LibWriteModelData()>\
+  %closefile tmpBuf
+  
+  %<SLibCacheCodeToFile("mainSrc_data_defn", tmpBuf)>
+  
+  %openfile tmpBuf
+
+  #include "Define_Header.h"
+  #include "Define_WatchDog.h"
+  #include "Define_SysCtrl.h"
+  #include "Define_GPIO.h"
+  #include "Define_ePWM.h"
+  #include "Define_SPI.h"
+  #include "Define_Xintf.h"
+  #include "Define_eQEP.h"
+  #include "Define_eCAP.h"
+  #include "Define_CAN.h"
+  #include "Define_CPUTimers.h"
+
+  %closefile tmpBuf
+ 
+  %<SLibCacheCodeToFile("mainSrc_incl", tmpBuf)>
+
+  %openfile tmpBuf
+
+void main(void)
+{
+	// Disable WatchDog.
+
+	// Clock Initializing
+
+	// Interrupt Initializing..
+
+	// Pin Function Initializing
+
+	// Each Part Initializing
+
+	// Start Each Part
+
+	while(1)
+	{
+	}
+}
+  %closefile tmpBuf
+  
+  %<SLibCacheCodeToFile("mainSrc_fcn_defn", tmpBuf)>
+
+  %<SetCurrentUtilsIncludesIdx("")>
+  
+%endfunction

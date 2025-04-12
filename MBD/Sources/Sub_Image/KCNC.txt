@@ -1,0 +1,11 @@
+SwDD_
+
+KCNC / Control System Research Team
+
+This document is the proprietary and confidential property of KCNC. It is intended solely for the use of authorized personnel and may not be distributed, copied, or disclosed to third parties without the prior written consent of KCNC.
+
+The information contained herein is provided for design and reference purposes only. KCNC makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for a particular purpose of this document. The company reserves the right to modify or update the content at any time without prior notice.
+
+Any unauthorized use, reproduction, or disclosure of this document may result in legal action in accordance with applicable laws and regulations.
+
+For any inquiries or requests related to this document, please contact KCNC at [https://kcnc.co.kr/company.html].
