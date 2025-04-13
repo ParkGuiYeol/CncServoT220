@@ -1,7 +1,16 @@
+# Cache 폴더 내부 파일 무시, 폴더 자체와 .gitkeep은 추적
 **/Cache/*
-**/Cache/.gitkeep
+!**/Cache/
+!**/Cache/.gitkeep
+
+# Codegen도 동일하게
 **/Codegen/*
-**/Codegen/.gitkeep
+!**/Codegen/
+!**/Codegen/.gitkeep
+
+# Debug 폴더 무시
 **/Debug/
+
+# 사용자 설정 및 메타데이터 무시
 .jxbrowser.userdata/
 .metadata/
