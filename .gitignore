@@ -1,5 +1,7 @@
-**/Cache/
-**/Codegen/
+**/Cache/*
+**/Cache/.gitkeep
+**/Codegen/*
+**/Codegen/.gitkeep
 **/Debug/
 .jxbrowser.userdata/
 .metadata/
