@@ -1,0 +1,230 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+ASM_SRCS += \
+../Source/DSP2834x_CodeStartBranch.asm \
+../Source/DSP2834x_usDelay.asm 
+
+C_SRCS += \
+../Source/Auto_Angle.c \
+../Source/Auto_Mode.c \
+../Source/CAN.c \
+../Source/CPUTimers.c \
+../Source/Communication.c \
+../Source/DAC.c \
+../Source/DSP2834x_GlobalVariableDefs.c \
+../Source/EXT_FPGA.c \
+../Source/Fault.c \
+../Source/Fnd_key.c \
+../Source/GPIO.c \
+../Source/I2C.c \
+../Source/LED.c \
+../Source/LPF.c \
+../Source/M1_Interrupt.c \
+../Source/M2_Interrupt.c \
+../Source/McBSP.c \
+../Source/Motor_Control.c \
+../Source/PC_ATC.c \
+../Source/PC_TURRET.c \
+../Source/Position_Speed.c \
+../Source/SCI.c \
+../Source/SPI.c \
+../Source/SVPWM.c \
+../Source/Sensor.c \
+../Source/SysCtrl.c \
+../Source/Torque_Control.c \
+../Source/WatchDog.c \
+../Source/Xintf.c \
+../Source/ePWM.c \
+../Source/eQEP.c \
+../Source/main.c 
+
+OBJS += \
+./Source/Auto_Angle.obj \
+./Source/Auto_Mode.obj \
+./Source/CAN.obj \
+./Source/CPUTimers.obj \
+./Source/Communication.obj \
+./Source/DAC.obj \
+./Source/DSP2834x_CodeStartBranch.obj \
+./Source/DSP2834x_GlobalVariableDefs.obj \
+./Source/DSP2834x_usDelay.obj \
+./Source/EXT_FPGA.obj \
+./Source/Fault.obj \
+./Source/Fnd_key.obj \
+./Source/GPIO.obj \
+./Source/I2C.obj \
+./Source/LED.obj \
+./Source/LPF.obj \
+./Source/M1_Interrupt.obj \
+./Source/M2_Interrupt.obj \
+./Source/McBSP.obj \
+./Source/Motor_Control.obj \
+./Source/PC_ATC.obj \
+./Source/PC_TURRET.obj \
+./Source/Position_Speed.obj \
+./Source/SCI.obj \
+./Source/SPI.obj \
+./Source/SVPWM.obj \
+./Source/Sensor.obj \
+./Source/SysCtrl.obj \
+./Source/Torque_Control.obj \
+./Source/WatchDog.obj \
+./Source/Xintf.obj \
+./Source/ePWM.obj \
+./Source/eQEP.obj \
+./Source/main.obj 
+
+ASM_DEPS += \
+./Source/DSP2834x_CodeStartBranch.pp \
+./Source/DSP2834x_usDelay.pp 
+
+C_DEPS += \
+./Source/Auto_Angle.pp \
+./Source/Auto_Mode.pp \
+./Source/CAN.pp \
+./Source/CPUTimers.pp \
+./Source/Communication.pp \
+./Source/DAC.pp \
+./Source/DSP2834x_GlobalVariableDefs.pp \
+./Source/EXT_FPGA.pp \
+./Source/Fault.pp \
+./Source/Fnd_key.pp \
+./Source/GPIO.pp \
+./Source/I2C.pp \
+./Source/LED.pp \
+./Source/LPF.pp \
+./Source/M1_Interrupt.pp \
+./Source/M2_Interrupt.pp \
+./Source/McBSP.pp \
+./Source/Motor_Control.pp \
+./Source/PC_ATC.pp \
+./Source/PC_TURRET.pp \
+./Source/Position_Speed.pp \
+./Source/SCI.pp \
+./Source/SPI.pp \
+./Source/SVPWM.pp \
+./Source/Sensor.pp \
+./Source/SysCtrl.pp \
+./Source/Torque_Control.pp \
+./Source/WatchDog.pp \
+./Source/Xintf.pp \
+./Source/ePWM.pp \
+./Source/eQEP.pp \
+./Source/main.pp 
+
+C_DEPS__QUOTED += \
+"Source\Auto_Angle.pp" \
+"Source\Auto_Mode.pp" \
+"Source\CAN.pp" \
+"Source\CPUTimers.pp" \
+"Source\Communication.pp" \
+"Source\DAC.pp" \
+"Source\DSP2834x_GlobalVariableDefs.pp" \
+"Source\EXT_FPGA.pp" \
+"Source\Fault.pp" \
+"Source\Fnd_key.pp" \
+"Source\GPIO.pp" \
+"Source\I2C.pp" \
+"Source\LED.pp" \
+"Source\LPF.pp" \
+"Source\M1_Interrupt.pp" \
+"Source\M2_Interrupt.pp" \
+"Source\McBSP.pp" \
+"Source\Motor_Control.pp" \
+"Source\PC_ATC.pp" \
+"Source\PC_TURRET.pp" \
+"Source\Position_Speed.pp" \
+"Source\SCI.pp" \
+"Source\SPI.pp" \
+"Source\SVPWM.pp" \
+"Source\Sensor.pp" \
+"Source\SysCtrl.pp" \
+"Source\Torque_Control.pp" \
+"Source\WatchDog.pp" \
+"Source\Xintf.pp" \
+"Source\ePWM.pp" \
+"Source\eQEP.pp" \
+"Source\main.pp" 
+
+OBJS__QUOTED += \
+"Source\Auto_Angle.obj" \
+"Source\Auto_Mode.obj" \
+"Source\CAN.obj" \
+"Source\CPUTimers.obj" \
+"Source\Communication.obj" \
+"Source\DAC.obj" \
+"Source\DSP2834x_CodeStartBranch.obj" \
+"Source\DSP2834x_GlobalVariableDefs.obj" \
+"Source\DSP2834x_usDelay.obj" \
+"Source\EXT_FPGA.obj" \
+"Source\Fault.obj" \
+"Source\Fnd_key.obj" \
+"Source\GPIO.obj" \
+"Source\I2C.obj" \
+"Source\LED.obj" \
+"Source\LPF.obj" \
+"Source\M1_Interrupt.obj" \
+"Source\M2_Interrupt.obj" \
+"Source\McBSP.obj" \
+"Source\Motor_Control.obj" \
+"Source\PC_ATC.obj" \
+"Source\PC_TURRET.obj" \
+"Source\Position_Speed.obj" \
+"Source\SCI.obj" \
+"Source\SPI.obj" \
+"Source\SVPWM.obj" \
+"Source\Sensor.obj" \
+"Source\SysCtrl.obj" \
+"Source\Torque_Control.obj" \
+"Source\WatchDog.obj" \
+"Source\Xintf.obj" \
+"Source\ePWM.obj" \
+"Source\eQEP.obj" \
+"Source\main.obj" 
+
+ASM_DEPS__QUOTED += \
+"Source\DSP2834x_CodeStartBranch.pp" \
+"Source\DSP2834x_usDelay.pp" 
+
+C_SRCS__QUOTED += \
+"../Source/Auto_Angle.c" \
+"../Source/Auto_Mode.c" \
+"../Source/CAN.c" \
+"../Source/CPUTimers.c" \
+"../Source/Communication.c" \
+"../Source/DAC.c" \
+"../Source/DSP2834x_GlobalVariableDefs.c" \
+"../Source/EXT_FPGA.c" \
+"../Source/Fault.c" \
+"../Source/Fnd_key.c" \
+"../Source/GPIO.c" \
+"../Source/I2C.c" \
+"../Source/LED.c" \
+"../Source/LPF.c" \
+"../Source/M1_Interrupt.c" \
+"../Source/M2_Interrupt.c" \
+"../Source/McBSP.c" \
+"../Source/Motor_Control.c" \
+"../Source/PC_ATC.c" \
+"../Source/PC_TURRET.c" \
+"../Source/Position_Speed.c" \
+"../Source/SCI.c" \
+"../Source/SPI.c" \
+"../Source/SVPWM.c" \
+"../Source/Sensor.c" \
+"../Source/SysCtrl.c" \
+"../Source/Torque_Control.c" \
+"../Source/WatchDog.c" \
+"../Source/Xintf.c" \
+"../Source/ePWM.c" \
+"../Source/eQEP.c" \
+"../Source/main.c" 
+
+ASM_SRCS__QUOTED += \
+"../Source/DSP2834x_CodeStartBranch.asm" \
+"../Source/DSP2834x_usDelay.asm" 
+
+

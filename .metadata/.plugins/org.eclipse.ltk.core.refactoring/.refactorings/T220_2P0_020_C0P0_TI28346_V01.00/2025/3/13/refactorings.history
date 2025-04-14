@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;T220_2P0_020_C0P0_TI28346_250326_2022/BSW/Source/I2C.c&apos; to &apos;D02_DRV_I2C.c&apos;" description="Rename resource &apos;I2C.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="BSW/Source/I2C.c" name="D02_DRV_I2C.c" stamp="1743038517426" updateReferences="true"/>
+</session>

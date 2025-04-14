@@ -1,0 +1,244 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+Source/Auto_Angle.obj: ../Source/Auto_Angle.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Auto_Angle.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Auto_Mode.obj: ../Source/Auto_Mode.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Auto_Mode.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/CAN.obj: ../Source/CAN.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/CAN.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/CPUTimers.obj: ../Source/CPUTimers.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/CPUTimers.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Communication.obj: ../Source/Communication.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Communication.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/DAC.obj: ../Source/DAC.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/DAC.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/DSP2834x_CodeStartBranch.obj: ../Source/DSP2834x_CodeStartBranch.asm $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/DSP2834x_CodeStartBranch.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/DSP2834x_GlobalVariableDefs.obj: ../Source/DSP2834x_GlobalVariableDefs.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/DSP2834x_GlobalVariableDefs.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/DSP2834x_usDelay.obj: ../Source/DSP2834x_usDelay.asm $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/DSP2834x_usDelay.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/EXT_FPGA.obj: ../Source/EXT_FPGA.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/EXT_FPGA.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Fault.obj: ../Source/Fault.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Fault.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Fnd_key.obj: ../Source/Fnd_key.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Fnd_key.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/GPIO.obj: ../Source/GPIO.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/GPIO.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/I2C.obj: ../Source/I2C.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/I2C.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/LED.obj: ../Source/LED.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/LED.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/LPF.obj: ../Source/LPF.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/LPF.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/M1_Interrupt.obj: ../Source/M1_Interrupt.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/M1_Interrupt.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/M2_Interrupt.obj: ../Source/M2_Interrupt.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/M2_Interrupt.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/McBSP.obj: ../Source/McBSP.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/McBSP.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Motor_Control.obj: ../Source/Motor_Control.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Motor_Control.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/PC_ATC.obj: ../Source/PC_ATC.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/PC_ATC.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/PC_TURRET.obj: ../Source/PC_TURRET.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/PC_TURRET.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Position_Speed.obj: ../Source/Position_Speed.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Position_Speed.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/SCI.obj: ../Source/SCI.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/SCI.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/SPI.obj: ../Source/SPI.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/SPI.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/SVPWM.obj: ../Source/SVPWM.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/SVPWM.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Sensor.obj: ../Source/Sensor.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Sensor.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/SysCtrl.obj: ../Source/SysCtrl.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/SysCtrl.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Torque_Control.obj: ../Source/Torque_Control.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Torque_Control.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/WatchDog.obj: ../Source/WatchDog.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/WatchDog.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/Xintf.obj: ../Source/Xintf.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Xintf.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/ePWM.obj: ../Source/ePWM.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/ePWM.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/eQEP.obj: ../Source/eQEP.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/eQEP.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Source/main.obj: ../Source/main.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170309_BT40_arm_home/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/main.pp" --obj_directory="Source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

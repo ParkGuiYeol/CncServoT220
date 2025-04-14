@@ -1,0 +1,53 @@
+
+**** Build of configuration Debug for project SERVO_DRVIE_28346_170414_1035 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../Source/PC_ATC.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170414_1035/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/PC_ATC.pp" --obj_directory="Source"  "../Source/PC_ATC.c"
+"../Source/PC_ATC.c", line 840: error #20: identifier "Flag_PD_Save" is undefined
+"../Source/PC_ATC.c", line 846: error #20: identifier "Flag_Pre_Set_Save" is undefined
+"../Source/PC_ATC.c", line 864: error #20: identifier "Flag_Auto_Mode_Start" is undefined
+"../Source/PC_ATC.c", line 867: error #20: identifier "Flag_Origin_Save" is undefined
+"../Source/PC_ATC.c", line 875: error #20: identifier "Flag_HOME_IN" is undefined
+"../Source/PC_ATC.c", line 899: error #20: identifier "Flag_Origin_Save" is undefined
+"../Source/PC_ATC.c", line 902: error #20: identifier "Flag_HOME_IN" is undefined
+"../Source/PC_ATC.c", line 904: error #20: identifier "HOME_P1" is undefined
+"../Source/PC_ATC.c", line 908: error #20: identifier "Flag_Auto_Mode_Start" is undefined
+"../Source/PC_ATC.c", line 912: error #20: identifier "Flag_Origin_Save" is undefined
+"../Source/PC_ATC.c", line 915: error #20: identifier "Flag_HOME_IN" is undefined
+"../Source/PC_ATC.c", line 916: error #20: identifier "HOME_P2" is undefined
+"../Source/PC_ATC.c", line 921: error #20: identifier "Position_Home_H" is undefined
+"../Source/PC_ATC.c", line 937: error #20: identifier "CNT_Auto_Calc" is undefined
+"../Source/PC_ATC.c", line 941: error #20: identifier "Pre_Set_Point_Value" is undefined
+"../Source/PC_ATC.c", line 941: error #20: identifier "Position_Home_L" is undefined
+"../Source/PC_ATC.c", line 950: error #20: identifier "Pre_Set_Point_Value" is undefined
+"../Source/PC_ATC.c", line 958: error #20: identifier "Flag_Pre_Set_Point_Save" is undefined
+"../Source/PC_ATC.c", line 964: error #20: identifier "Position_Home_L" is undefined
+"../Source/PC_ATC.c", line 972: error #20: identifier "Flag_Pre_Set_Point_Save" is undefined
+"../Source/PC_ATC.c", line 1021: error #20: identifier "Flag_Auto_Mode_Start" is undefined
+"../Source/PC_ATC.c", line 1037: error #20: identifier "Read_IO_INPUT" is undefined
+"../Source/PC_ATC.c", line 1039: error #20: identifier "Old_IO_INPUT" is undefined
+"../Source/PC_ATC.c", line 1046: error #20: identifier "SW_Flag_SPEED_CONV_1" is undefined
+"../Source/PC_ATC.c", line 1047: error #20: identifier "SW_Flag_SPEED_CONV_2" is undefined
+"../Source/PC_ATC.c", line 1054: error #20: identifier "SW_Flag_SPEED_CONV_1" is undefined
+"../Source/PC_ATC.c", line 1055: error #20: identifier "SW_Flag_SPEED_CONV_2" is undefined
+"../Source/PC_ATC.c", line 1080: error #20: identifier "Flag_REF_OK" is undefined
+"../Source/PC_ATC.c", line 1081: error #20: identifier "Flag_DRIVE_ERROR" is undefined
+"../Source/PC_ATC.c", line 1082: error #20: identifier "Flag_DIRVE_RDY" is undefined
+"../Source/PC_ATC.c", line 1094: error #20: identifier "Flag_F500II_SVON" is undefined
+"../Source/PC_ATC.c", line 1098: error #20: identifier "Flag_F500II_SVON" is undefined
+"../Source/PC_ATC.c", line 1152: error #20: identifier "CNT_Auto_Step" is undefined
+"../Source/PC_ATC.c", line 1171: error #20: identifier "DA_Curretn_Angle" is undefined
+34 errors detected in the compilation of "../Source/PC_ATC.c".
+
+>> Compilation failure
+gmake: *** [Source/PC_ATC.obj] Error 1
+'Building file: ../Source/PC_ATC_SV.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_170414_1035/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/PC_ATC_SV.pp" --obj_directory="Source"  "../Source/PC_ATC_SV.c"
+'Finished building: ../Source/PC_ATC_SV.c'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

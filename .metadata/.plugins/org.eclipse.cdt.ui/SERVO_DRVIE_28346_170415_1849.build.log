@@ -1,0 +1,56 @@
+
+**** Build of configuration Debug for project SERVO_DRVIE_28346_170415_1849 ****
+
+"C:\\ti\\ccs1230\\ccs\\utils\\bin\\gmake" -k all 
+ 
+Building file: "../Source/Xintf.c"
+Invoking: C2000 Compiler
+"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 --include_path="D:/6_CncServo/1_CncServCode/2_OldCode/1_SERVO/1_WIA_DRIVE_28346/SERVO_DRVIE_28346_170415_1849/Include" --include_path="C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/Include" -g --diag_warning=225 --display_error_number --abi=coffabi --preproc_with_compile --preproc_dependency="Source/Xintf.d_raw" --obj_directory="Source"  "../Source/Xintf.c"
+Finished building: "../Source/Xintf.c"
+ 
+Building file: "../Source/ePWM.c"
+Invoking: C2000 Compiler
+"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 --include_path="D:/6_CncServo/1_CncServCode/2_OldCode/1_SERVO/1_WIA_DRIVE_28346/SERVO_DRVIE_28346_170415_1849/Include" --include_path="C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/Include" -g --diag_warning=225 --display_error_number --abi=coffabi --preproc_with_compile --preproc_dependency="Source/ePWM.d_raw" --obj_directory="Source"  "../Source/ePWM.c"
+Finished building: "../Source/ePWM.c"
+ 
+Building file: "../Source/eQEP.c"
+Invoking: C2000 Compiler
+"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 --include_path="D:/6_CncServo/1_CncServCode/2_OldCode/1_SERVO/1_WIA_DRIVE_28346/SERVO_DRVIE_28346_170415_1849/Include" --include_path="C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/Include" -g --diag_warning=225 --display_error_number --abi=coffabi --preproc_with_compile --preproc_dependency="Source/eQEP.d_raw" --obj_directory="Source"  "../Source/eQEP.c"
+Finished building: "../Source/eQEP.c"
+ 
+Building file: "../Source/main.c"
+Invoking: C2000 Compiler
+"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 --include_path="D:/6_CncServo/1_CncServCode/2_OldCode/1_SERVO/1_WIA_DRIVE_28346/SERVO_DRVIE_28346_170415_1849/Include" --include_path="C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/Include" -g --diag_warning=225 --display_error_number --abi=coffabi --preproc_with_compile --preproc_dependency="Source/main.d_raw" --obj_directory="Source"  "../Source/main.c"
+Finished building: "../Source/main.c"
+ 
+Building target: "SERVO_DRVIE_28346_170415_1849.out"
+Invoking: C2000 Linker
+"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 -g --diag_warning=225 --display_error_number --abi=coffabi -z -m"SERVO_DRVIE_28346_170415_1849.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/lib" -i"D:/6_CncServo/1_CncServCode/2_OldCode/1_SERVO/1_WIA_DRIVE_28346/SERVO_DRVIE_28346_170415_1849/Source" -i"C:/ti/ccs1230/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include" --reread_libs --display_error_number --xml_link_info="SERVO_DRVIE_28346_170415_1849_linkInfo.xml" --rom_model -o "SERVO_DRVIE_28346_170415_1849.out" "./Source/Auto_Angle.obj" "./Source/Auto_Mode.obj" "./Source/CAN.obj" "./Source/CPUTimers.obj" "./Source/Communication.obj" "./Source/DAC.obj" "./Source/DSP2834x_CodeStartBranch.obj" "./Source/DSP2834x_GlobalVariableDefs.obj" "./Source/DSP2834x_usDelay.obj" "./Source/EXT_FPGA.obj" "./Source/Fault.obj" "./Source/Fnd_key.obj" "./Source/GPIO.obj" "./Source/I2C.obj" "./Source/LED.obj" "./Source/LPF.obj" "./Source/M1_Interrupt.obj" "./Source/M2_Interrupt.obj" "./Source/McBSP.obj" "./Source/Motor_Control.obj" "./Source/PC_ATC.obj" "./Source/PC_ATC_Main.obj" "./Source/PC_TURRET.obj" "./Source/Position_Speed.obj" "./Source/SCI.obj" "./Source/SPI.obj" "./Source/SVPWM.obj" "./Source/Sensor.obj" "./Source/SysCtrl.obj" "./Source/Torque_Control.obj" "./Source/WatchDog.obj" "./Source/Xintf.obj" "./Source/ePWM.obj" "./Source/eQEP.obj" "./Source/main.obj" "../28346_RAM_lnk.cmd" "../DSP2834x_M25P40.lib" "../cmd/DSP2834x_Headers_nonBIOS.cmd"  -llibc.a 
+<Linking>
+../../master/DIAG/user_msg_api.c:213:internal fatal error #99926: 
+   (ofile_error_handler(): ./Source/I2C.obj: corrupted object file:  invalid
+   symbol table offset 0x00009fd4)
+ 
+INTERNAL ERROR: C:\ti\ccs1230\ccs\tools\compiler\ti-cgt-c2000_22.6.0.LTS\bin\lnk2000.exe had an internal inconsistency and aborted
+ 
+This is caused by a defect in the TI Linker.
+TI Customer Support may be able to suggest a workaround to avoid this.
+ 
+Upgrading to the newest version of the compiler may fix this problem.
+ 
+Contact TI in the E2E support forums at http://e2e.ti.com under
+"Development Tools", "TI C/C++ Compiler".  See the link titled
+"Submitting an issue".
+ 
+We need to see this ENTIRE error message and a complete, reproducible
+test case including ALL of the command-line options.
+Include all of the object files, libraries, and linker command files
+used to link the program.
+ 
+ 
+>> Compilation failure
+makefile:174: recipe for target 'SERVO_DRVIE_28346_170415_1849.out' failed
+gmake: *** [SERVO_DRVIE_28346_170415_1849.out] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

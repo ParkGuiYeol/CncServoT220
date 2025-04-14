@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project SERVO_DRVIE_28346_160302_0913 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../Source/I2C.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_160302_0913/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/I2C.pp" --obj_directory="Source"  "../Source/I2C.c"
+'Finished building: ../Source/I2C.c'
+' '
+'Building target: SERVO_DRVIE_28346_160302_0913.out'
+'Invoking: C2000 Linker'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -g --diag_warning=225 --display_error_number -z -m"SERVO_DRVIE_28346_160302_0913.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/lib" -i"D:/1. Code/2. SERVO/WIA_DRIVE_28346/SERVO_DRVIE_28346_160302_0913/Source" -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/include" --reread_libs --display_error_number --xml_link_info="SERVO_DRVIE_28346_160302_0913_linkInfo.xml" --rom_model -o "SERVO_DRVIE_28346_160302_0913.out"  "./Source/main.obj" "./Source/eQEP.obj" "./Source/ePWM.obj" "./Source/Xintf.obj" "./Source/WatchDog.obj" "./Source/Torque_Control.obj" "./Source/SysCtrl.obj" "./Source/Sensor.obj" "./Source/SVPWM.obj" "./Source/SPI.obj" "./Source/SCI.obj" "./Source/Position_Speed.obj" "./Source/Motor_Control.obj" "./Source/McBSP.obj" "./Source/M2_Interrupt.obj" "./Source/M1_Interrupt.obj" "./Source/LPF.obj" "./Source/LED.obj" "./Source/I2C.obj" "./Source/GPIO.obj" "./Source/Fnd_key.obj" "./Source/Fault.obj" "./Source/EXT_FPGA.obj" "./Source/DSP2834x_usDelay.obj" "./Source/DSP2834x_GlobalVariableDefs.obj" "./Source/DAC.obj" "./Source/CPUTimers.obj" "./Source/CAN.obj" "./Source/Auto_Mode.obj" "./Source/Auto_Angle.obj" "../28346_RAM_lnk.cmd" "../cmd/DSP2834x_Headers_nonBIOS.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: SERVO_DRVIE_28346_160302_0913.out'
+' '
+
+**** Build Finished ****

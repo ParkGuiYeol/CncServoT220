@@ -1,0 +1,20 @@
+
+**** Build of configuration Debug for project DH_INWHEEL_20150809_1244 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../Source/M2_Interrupt.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/1. EV/1. DH_INWHEEL/DH_INWHEEL_20150809_1244/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/M2_Interrupt.pp" --obj_directory="Source"  "../Source/M2_Interrupt.c"
+"../Source/M2_Interrupt.c", line 131: error #1851: case label value has already appeared in this switch at line 128
+"../Source/M2_Interrupt.c", line 132: error #20: identifier "Flag_CAN_Error" is undefined
+
+>> Compilation failure
+"../Source/M2_Interrupt.c", line 134: error #20: identifier "DO3_ON" is undefined
+"../Source/M2_Interrupt.c", line 135: error #20: identifier "CNT_CAN_Error" is undefined
+"../Source/M2_Interrupt.c", line 137: error #137: struct "<unnamed>" has no field "CAN_BMS"
+"../Source/M2_Interrupt.c", line 143: error #20: identifier "CNT_CAN_Error" is undefined
+6 errors detected in the compilation of "../Source/M2_Interrupt.c".
+gmake: *** [Source/M2_Interrupt.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

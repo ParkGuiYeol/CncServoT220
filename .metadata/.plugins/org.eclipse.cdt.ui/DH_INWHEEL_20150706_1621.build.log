@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project DH_INWHEEL_20150706_1621 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../source/LPF.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/1. EV/1. DH_INWHEEL/DH_INWHEEL_20150706_1621/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="source/LPF.pp" --obj_directory="source"  "../source/LPF.c"
+'Finished building: ../source/LPF.c'
+' '
+'Building target: DH_INWHEEL_20150706_1621.out'
+'Invoking: C2000 Linker'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -g --diag_warning=225 --display_error_number -z -m"DH_INWHEEL_20150706_1621.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/lib" -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/include" --reread_libs --display_error_number --xml_link_info="DH_INWHEEL_20150706_1621_linkInfo.xml" --rom_model -o "DH_INWHEEL_20150706_1621.out"  "./source/main.obj" "./source/eQEP.obj" "./source/ePWM.obj" "./source/Xintf.obj" "./source/WatchDog.obj" "./source/SysCtrl.obj" "./source/Sensor.obj" "./source/SVPWM.obj" "./source/SPI.obj" "./source/SCI.obj" "./source/McBSP.obj" "./source/M2_Interrupt.obj" "./source/M1_Interrupt.obj" "./source/LPF.obj" "./source/LED.obj" "./source/Inverter.obj" "./source/I2C.obj" "./source/GPIO.obj" "./source/Fault.obj" "./source/EXT_FPGA.obj" "./source/DSP2834x_usDelay.obj" "./source/DSP2834x_GlobalVariableDefs.obj" "./source/DAC.obj" "./source/CPUTimers.obj" "./source/ADC.obj" "../28346_RAM_lnk.cmd" "../cmd/DSP2834x_Headers_nonBIOS.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: DH_INWHEEL_20150706_1621.out'
+' '
+
+**** Build Finished ****
