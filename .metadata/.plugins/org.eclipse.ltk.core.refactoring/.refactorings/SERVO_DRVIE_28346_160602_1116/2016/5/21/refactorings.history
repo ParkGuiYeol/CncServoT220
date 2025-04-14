@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SERVO_DRVIE_28346_160517_0832/Source/ATC.c&apos; to &apos;PC_ATC.c&apos;" description="Rename resource &apos;ATC.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Source/ATC.c" name="PC_ATC.c" stamp="1463450553631" updateReferences="true"/>
+</session>

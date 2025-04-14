@@ -1,0 +1,111 @@
+/*
+ *	M2_Interrupt.c
+ *
+ *  Created on: 2015. 7. 4.
+ *      Author: Park Gui Yeol
+ *
+ */
+
+#include "Define_Header.h"
+
+/*****************************************************************     Variables     ******************************************************************/
+///// Parameter Value /////
+S_PRM ParameterM2 = {55e-6, 105.0e-6, 0.2870, 3.484, 0.1913, 0.03826};	// S_PRM ParameterM1 = {Ld, Lq, Kt, Inv_Kt, Ke, Phi}
+
+///// Controller Value /////
+S_PIDC PCM2 = {0.1, 0, 0, 0, 0};										// Position Control Parameters
+S_PIC SCM2 = {0.3, 10, 3, 0};											// S_PIC SCM1 = {Kp, Ki, Ka, integ}
+S_DQPIC CCM2 = {{0.458, 35.45, 2.183, 0}, {0.3614, 35.17, 2.767, 0}};	// S_DQPIC CCM1 = {{Kp_d, Ki_d, Ka_d, integ_d}, {Kp_d, Ki_d, Ka_d, integ_q}}
+
+///// Imaginary Speed Value Control /////
+S_CSPD Speed_M2_Cont = {1, 0, 0};										// S_CSPD Speed_M1_Cont = {Flag, Value, Inc_Value}
+
+///// Auto Control /////
+S_AC Auto_M2_Cont = {2, 400, 400, 3, 0}, SPD_Auto_M2_Cont = {2, 10000, 10000, 3, 0};	// S_AC Auto_M1_Cont = {Auto_M1_Cont.bit.all, slop_Start, Slop_Stop, Time_Stay, Time_CNT}
+
+// VF/Align/V Control
+S_VFC VFM2_Cont = {0, 0, 0, 0};											// S_VFC VFM1_Cont = {VFM1_Cont.Flag.all, Vout, Fout, theta}
+
+///// Current/Torque Control /////
+S_CC TIM2_Cont = {2, 0, 0, 0, 0};										// S_CC TIM1_Cont = {TIM1_Cont.Flag.all, TI_ref, Po_ref, Beta_ref}
+
+// Flag Inverter
+Uint32 Flag_Inverter_M2 = 0;											// Inverter Flag
+
+// Over-Modulation Flag
+Uint16 Flag_OM2 = 0;
+
+///// Torque or Current Input and Limit Value /////
+S_TRQ TIM2 = {0, 0, 0};													// Torque or Current Input and Limit Value
+
+///// Current Value /////
+S_TP IM2 = {0, 0, 0}, IM2_offset = {0, 0, 0}, IM2_sum = {0, 0, 0};		// IM1 = {a, b, c}, IM1_offset = {a, b, c}, IM1_sum = {a, b, c}
+S_TPI IM2_read = {0, 0, 0};
+
+// Speed Controller Un-Limited Current or Torque Reference
+float TIM2_ref_UL = 0;
+float Rpm2_ref_UL = 0;
+
+///// dq-axis Current /////
+S_DQ IM2s = {0, 0}, IM2e = {0, 0}, IM2e_ref = {0, 0};					// IM1s = {d, q}, IM1e = {d, q}, IM1e_ref = {d, q}
+
+///// dq-axis Voltage & Voltage Reference
+S_DQ  VM2e = {0, 0}, VM2e_ref = {0, 0}, VM2s_ref = {0, 0};				// VM1e_ref = {d, q}, VM1s_ref = {d, q}, VM1e = {d, q}
+
+///// Phase Voltage Reference /////
+S_TP VM2_ref = {0, 0, 0}, VM2n_ref = {0, 0, 0};							// VM1_ref = {a, b, c}, VM1n_ref = {a, b, c}
+
+///// Angle & Speed Value /////
+S_THT Theta_M2 = {0, 2.287165, 0, 0, {0, -1000}};						// S_THT theta_M1 = {now, offset, sin, cos, { pst.now,	pst.old}}
+
+///// Speed /////
+S_SPD Speed_M2 = {0, 0, 0, 0, 0, 0, 0};									// S_SPD speed_M1 = {rpm_now, rpm_old, rpm_low, La, Lb, Wm_low, We_low}
+
+// Temperature Value
+S_TEMP Temp_M2 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};			// S_TEMP Temp_M2 = {inv_low, board_low, mot_low, inv_low_k1, board_low_k1, mot_low_k1, inv_now, board_now, mot_now, inv_old, board_old, mot_old, La, Lb}
+
+// Fault Value
+S_MFT Fault_M2 = {0};													// Fault_M1.all
+
+// Dynamo Torque Sensing
+S_TQ DynamoTQ_M2 = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+// Over-Modulation Flag
+Uint16 Speed_Warning_M2 = 0;
+
+///// Motor Value Package /////
+S_MOT M2 = {
+			&ParameterM2,																							// Motor Parameter
+			&PCM2, &SCM2, &CCM2,																					// Controller
+			&Speed_M2_Cont, &Auto_M2_Cont, &SPD_Auto_M2_Cont, &VFM2_Cont, &TIM2_Cont, &Flag_Inverter_M2, &Flag_OM2,	// Control
+			&TIM2, &TIM2_ref_UL, &Rpm2_ref_UL,																		// Current or Torque Control Value
+			&IM2, &IM2s, &IM2e, &IM2e_ref, &IM2_read, &IM2_offset, &IM2_sum,										// Current Value
+			&VM2e, &VM2e_ref, &VM2s_ref, &VM2_ref, &VM2n_ref,														// Voltage Value
+			&Theta_M2, &Speed_M2,																					// Angle & Speed Value
+			&Temp_M2,																								// Temperature Value
+			&Fault_M2																								// Fault Register
+			};
+
+Uint16 Display_M2_FLAG = 1;
+Uint16 CNT_RS232_TX = 0;
+/************************************************************** 		Code		***********************************************************/
+interrupt void M2_Interrupt(void)
+{
+//	DO_ON;														// Interrupt Start Signal, TP_DIP_3
+
+	AD_GROUP2_CONVT_ON;											// DSP ¡æ FPGA
+
+	Reset_WatchCat();											// Reset Watch Dog & Cat
+
+
+	DAC_OUT();													// Digital to Analog Converting
+
+	AD_GROUP2_CONVT_OFF;										// Interrupt Start Signal(DSP ¡æ FPGA)
+
+//	DO_OFF;
+
+	EPwm2Regs.ETCLR.bit.INT = 1;								// ePWM1 Interrupt Clear
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP3;						// ePWM1 PIE Interrupt Clear
+
+	return;
+}

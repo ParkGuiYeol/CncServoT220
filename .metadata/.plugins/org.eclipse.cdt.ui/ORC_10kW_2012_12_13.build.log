@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project ORC_10kW_2012_12_13 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../source/ePWM.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.4/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="C:/Test Code/ORC_10kW_2012_12_13/include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.4/include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="source/ePWM.pp" --obj_directory="source"  "../source/ePWM.c"
+'Finished building: ../source/ePWM.c'
+' '
+'Building target: ORC_10kW_2012_12_13.out'
+'Invoking: C2000 Linker'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.4/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -g --diag_warning=225 --display_error_number -z -m"ORC_10kW_2012_12_13.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.4/lib" -i"C:/ti/ccsv5/tools/compiler/c2000_6.2.4/include" --reread_libs --display_error_number --xml_link_info="ORC_10kW_2012_12_13_linkInfo.xml" --rom_model -o "ORC_10kW_2012_12_13.out"  "./source/main.obj" "./source/eQEP.obj" "./source/ePWM.obj" "./source/Xintf.obj" "./source/WatchDog.obj" "./source/SysCtrl.obj" "./source/Sensor.obj" "./source/SVPWM.obj" "./source/SPI.obj" "./source/SCI.obj" "./source/LED.obj" "./source/Inverter.obj" "./source/Interrupt.obj" "./source/GPIO.obj" "./source/Fault.obj" "./source/DSP2834x_usDelay.obj" "./source/DSP2834x_GlobalVariableDefs.obj" "./source/DAC.obj" "./source/Converter.obj" "./source/CPUTimers.obj" "./source/ADC.obj" "../28346_RAM_lnk.cmd" "../cmd/DSP2834x_Headers_nonBIOS.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: ORC_10kW_2012_12_13.out'
+' '
+
+**** Build Finished ****

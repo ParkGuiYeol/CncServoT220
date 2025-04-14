@@ -1,0 +1,152 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+ASM_SRCS += \
+../source/DSP2834x_usDelay.asm 
+
+C_SRCS += \
+../source/ADC.c \
+../source/CPUTimers.c \
+../source/Converter.c \
+../source/DAC.c \
+../source/DSP2834x_GlobalVariableDefs.c \
+../source/Fault.c \
+../source/GPIO.c \
+../source/Interrupt.c \
+../source/Inverter.c \
+../source/LED.c \
+../source/SCI.c \
+../source/SPI.c \
+../source/SVPWM.c \
+../source/Sensor.c \
+../source/SysCtrl.c \
+../source/WatchDog.c \
+../source/Xintf.c \
+../source/ePWM.c \
+../source/eQEP.c \
+../source/main.c 
+
+OBJS += \
+./source/ADC.obj \
+./source/CPUTimers.obj \
+./source/Converter.obj \
+./source/DAC.obj \
+./source/DSP2834x_GlobalVariableDefs.obj \
+./source/DSP2834x_usDelay.obj \
+./source/Fault.obj \
+./source/GPIO.obj \
+./source/Interrupt.obj \
+./source/Inverter.obj \
+./source/LED.obj \
+./source/SCI.obj \
+./source/SPI.obj \
+./source/SVPWM.obj \
+./source/Sensor.obj \
+./source/SysCtrl.obj \
+./source/WatchDog.obj \
+./source/Xintf.obj \
+./source/ePWM.obj \
+./source/eQEP.obj \
+./source/main.obj 
+
+ASM_DEPS += \
+./source/DSP2834x_usDelay.pp 
+
+C_DEPS += \
+./source/ADC.pp \
+./source/CPUTimers.pp \
+./source/Converter.pp \
+./source/DAC.pp \
+./source/DSP2834x_GlobalVariableDefs.pp \
+./source/Fault.pp \
+./source/GPIO.pp \
+./source/Interrupt.pp \
+./source/Inverter.pp \
+./source/LED.pp \
+./source/SCI.pp \
+./source/SPI.pp \
+./source/SVPWM.pp \
+./source/Sensor.pp \
+./source/SysCtrl.pp \
+./source/WatchDog.pp \
+./source/Xintf.pp \
+./source/ePWM.pp \
+./source/eQEP.pp \
+./source/main.pp 
+
+C_DEPS__QUOTED += \
+"source\ADC.pp" \
+"source\CPUTimers.pp" \
+"source\Converter.pp" \
+"source\DAC.pp" \
+"source\DSP2834x_GlobalVariableDefs.pp" \
+"source\Fault.pp" \
+"source\GPIO.pp" \
+"source\Interrupt.pp" \
+"source\Inverter.pp" \
+"source\LED.pp" \
+"source\SCI.pp" \
+"source\SPI.pp" \
+"source\SVPWM.pp" \
+"source\Sensor.pp" \
+"source\SysCtrl.pp" \
+"source\WatchDog.pp" \
+"source\Xintf.pp" \
+"source\ePWM.pp" \
+"source\eQEP.pp" \
+"source\main.pp" 
+
+OBJS__QUOTED += \
+"source\ADC.obj" \
+"source\CPUTimers.obj" \
+"source\Converter.obj" \
+"source\DAC.obj" \
+"source\DSP2834x_GlobalVariableDefs.obj" \
+"source\DSP2834x_usDelay.obj" \
+"source\Fault.obj" \
+"source\GPIO.obj" \
+"source\Interrupt.obj" \
+"source\Inverter.obj" \
+"source\LED.obj" \
+"source\SCI.obj" \
+"source\SPI.obj" \
+"source\SVPWM.obj" \
+"source\Sensor.obj" \
+"source\SysCtrl.obj" \
+"source\WatchDog.obj" \
+"source\Xintf.obj" \
+"source\ePWM.obj" \
+"source\eQEP.obj" \
+"source\main.obj" 
+
+ASM_DEPS__QUOTED += \
+"source\DSP2834x_usDelay.pp" 
+
+C_SRCS__QUOTED += \
+"../source/ADC.c" \
+"../source/CPUTimers.c" \
+"../source/Converter.c" \
+"../source/DAC.c" \
+"../source/DSP2834x_GlobalVariableDefs.c" \
+"../source/Fault.c" \
+"../source/GPIO.c" \
+"../source/Interrupt.c" \
+"../source/Inverter.c" \
+"../source/LED.c" \
+"../source/SCI.c" \
+"../source/SPI.c" \
+"../source/SVPWM.c" \
+"../source/Sensor.c" \
+"../source/SysCtrl.c" \
+"../source/WatchDog.c" \
+"../source/Xintf.c" \
+"../source/ePWM.c" \
+"../source/eQEP.c" \
+"../source/main.c" 
+
+ASM_SRCS__QUOTED += \
+"../source/DSP2834x_usDelay.asm" 
+
+

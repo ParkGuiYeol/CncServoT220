@@ -1,0 +1,30 @@
+
+**** Build of configuration Debug for project T220_2P0_020_C0P0_TI28346_250319_1842 ****
+
+"C:\\ti\\ccs1281\\ccs\\utils\\bin\\gmake" -k all 
+ 
+Building file: "../BSW/Source/M1_Interrupt.c"
+Invoking: C2000 Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/BSW/Include" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/BSW/Source" --include_path="C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/Include" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/slprj/ert/_sharedutils" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/b01_OSnScheduler_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/c01_MainAdc_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/c02_SubAdc_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/d01_Diaglnteg_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/e01_MtrCtrl_VarGain_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/e02_MtrCtrl_Pst_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/e03_MtrCtrl_MtrCtrl_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/e04_MtrCtrl_PwmSet_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/f01_CommRx1_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/g03_CommTx_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/h01_MdeMgmt_ert_rtw" --include_path="D:/6_CncServo/1_CncServoCode/2_KCNC_T220_2P0_020_TI28346/T220_2P0_020_C0P0_TI28346_250319_1842/ASW/j01_McuInit_ert_rtw" -g --diag_warning=225 --display_error_number --abi=coffabi --preproc_with_compile --preproc_dependency="BSW/Source/M1_Interrupt.d_raw" --obj_directory="BSW/Source"  "../BSW/Source/M1_Interrupt.c"
+Finished building: "../BSW/Source/M1_Interrupt.c"
+ 
+Building target: "T220_2P0_020_C0P0_TI28346_250319_1842.out"
+Invoking: C2000 Linker
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=2 -g --diag_warning=225 --display_error_number --abi=coffabi -z -m"T220_2P0_020_C0P0_TI28346_250319_1842.map" --stack_size=0x300 --warn_sections -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib" -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include" --reread_libs --display_error_number --xml_link_info="T220_2P0_020_C0P0_TI28346_250319_1842_linkInfo.xml" --rom_model -o "T220_2P0_020_C0P0_TI28346_250319_1842.out" "./ASW/b01_OSnScheduler_ert_rtw/b01_OSnScheduler.obj" "./ASW/c01_MainAdc_ert_rtw/c01_MainAdc.obj" "./ASW/c02_SubAdc_ert_rtw/c02_SubAdc.obj" "./ASW/d01_Diaglnteg_ert_rtw/d01_Diaglnteg.obj" "./ASW/e01_MtrCtrl_VarGain_ert_rtw/e01_MtrCtrl_VarGain.obj" "./ASW/e02_MtrCtrl_Pst_ert_rtw/e02_MtrCtrl_Pst.obj" "./ASW/e03_MtrCtrl_MtrCtrl_ert_rtw/e03_MtrCtrl_MtrCtrl.obj" "./ASW/e04_MtrCtrl_PwmSet_ert_rtw/e04_MtrCtrl_PwmSet.obj" "./ASW/f01_CommRx1_ert_rtw/f01_CommRx1.obj" "./ASW/g03_CommTx_ert_rtw/g03_CommTx.obj" "./ASW/h01_MdeMgmt_ert_rtw/h01_MdeMgmt.obj" "./ASW/j01_McuInit_ert_rtw/j01_McuInit.obj" "./ASW/slprj/ert/_sharedutils/look1_iflf_binlca.obj" "./BSW/Source/D01_DRV_CAN.obj" "./BSW/Source/D09_DRV_TMR.obj" "./BSW/Source/DAC.obj" "./BSW/Source/DSP2834x_CodeStartBranch.obj" "./BSW/Source/DSP2834x_GlobalVariableDefs.obj" "./BSW/Source/DSP2834x_usDelay.obj" "./BSW/Source/EXT_FPGA.obj" "./BSW/Source/GPIO.obj" "./BSW/Source/I2C.obj" "./BSW/Source/L02_ADC_READ.obj" "./BSW/Source/M1_Interrupt.obj" "./BSW/Source/M2_Interrupt.obj" "./BSW/Source/SPI.obj" "./BSW/Source/Sensor.obj" "./BSW/Source/SysCtrl.obj" "./BSW/Source/WatchDog.obj" "./BSW/Source/Xintf.obj" "./BSW/Source/ePWM.obj" "./BSW/Source/eQEP.obj" "./BSW/Source/main.obj" "../28346_RAM_lnk.cmd" "../DSP2834x_M25P40.lib" "../cmd/DSP2834x_Headers_nonBIOS.cmd"  -llibc.a 
+<Linking>
+Finished building target: "T220_2P0_020_C0P0_TI28346_250319_1842.out"
+ 
+Building secondary target: "T220_2P0_020_C0P0_TI28346_250319_1842.hex"
+Invoking: C2000 Hex Utility
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/hex2000" --entrypoint=0x000000 --diag_wrap=off --boot --lospcp=0 --spi8 --spibrr=3 --intel -o "T220_2P0_020_C0P0_TI28346_250319_1842.hex"  "T220_2P0_020_C0P0_TI28346_250319_1842.out" 
+Translating to Intel format...
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" codestart ==> (BOOT TABLE)
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" ramfuncs ==> (BOOT TABLE)
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" .cinit ==> (BOOT TABLE)
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" .econst ==> (BOOT TABLE)
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" .text.1 ==> (BOOT TABLE)
+   "T220_2P0_020_C0P0_TI28346_250319_1842.out" .text.2 ==> (BOOT TABLE)
+Finished building secondary target: "T220_2P0_020_C0P0_TI28346_250319_1842.hex"
+ 
+
+**** Build Finished ****

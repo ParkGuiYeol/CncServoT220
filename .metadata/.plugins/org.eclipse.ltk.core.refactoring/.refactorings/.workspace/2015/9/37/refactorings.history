@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;DH_INWHEEL_20150904_0815&apos; to &apos;DH_INWHEEL_20150907_1011&apos;" description="Rename resource &apos;DH_INWHEEL_20150904_0815&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/DH_INWHEEL_20150904_0815" name="DH_INWHEEL_20150907_1011" stamp="1441588311469" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;DH_INWHEEL_20150907_1011/Debug&apos;" deleteContents="false" description="Delete resource &apos;DH_INWHEEL_20150907_1011/Debug&apos;" element1="/DH_INWHEEL_20150907_1011/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1441588319148"/>
+</session>

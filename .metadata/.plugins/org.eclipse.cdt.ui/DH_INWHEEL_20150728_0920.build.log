@@ -1,0 +1,51 @@
+
+**** Build of configuration Debug for project DH_INWHEEL_20150728_0920 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../Source/Fault.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c2000_6.2.0/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --include_path="D:/1. Code/1. EV/1. DH_INWHEEL/DH_INWHEEL_20150728_0920/Include" --include_path="C:/ti/ccsv5/tools/compiler/c2000_6.2.0/Include" -g --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Source/Fault.pp" --obj_directory="Source"  "../Source/Fault.c"
+"../Source/Fault.c", line 209: error #20: identifier "Vdc" is undefined
+"../Source/Fault.c", line 219: error #20: identifier "Data_Tx_RH" is undefined
+"../Source/Fault.c", line 219: error #20: identifier "CONTROL_DISABLE" is undefined
+"../Source/Fault.c", line 220: error #20: identifier "Data_Tx_LH" is undefined
+"../Source/Fault.c", line 227: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 228: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 240: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 241: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 253: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 254: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 258: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 259: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 262: error #20: identifier "DCLINK_INV_GEN_DC_OVER" is undefined
+"../Source/Fault.c", line 263: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 264: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 273: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 274: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 276: error #20: identifier "DCLINK_INV_GEN_DC_OVER" is undefined
+"../Source/Fault.c", line 290: error #20: identifier "Data_Tx_RH" is undefined
+"../Source/Fault.c", line 290: error #20: identifier "CONTROL_DISABLE" is undefined
+"../Source/Fault.c", line 291: error #20: identifier "Data_Tx_LH" is undefined
+"../Source/Fault.c", line 298: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 299: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 316: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 317: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 330: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 331: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 333: error #20: identifier "DCLINK_INV_GEN_DC_UNDER" is undefined
+"../Source/Fault.c", line 345: error #20: identifier "DCLINK_INV_MOT_DC_UNDER" is undefined
+"../Source/Fault.c", line 346: error #20: identifier "TIMR" is undefined
+"../Source/Fault.c", line 347: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 349: error #20: identifier "DCLINK_INV_GEN_DC_UNDER" is undefined
+
+"../Source/Fault.c", line 360: error #20: identifier "TIMR" is undefined
+>> Compilation failure
+"../Source/Fault.c", line 361: error #20: identifier "TIML" is undefined
+"../Source/Fault.c", line 371: error #20: identifier "Data_Tx_RH" is undefined
+"../Source/Fault.c", line 371: error #20: identifier "CONTROL_DISABLE" is undefined
+"../Source/Fault.c", line 372: error #20: identifier "Data_Tx_LH" is undefined
+37 errors detected in the compilation of "../Source/Fault.c".
+gmake: *** [Source/Fault.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
