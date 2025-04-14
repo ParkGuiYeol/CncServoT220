@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;DH_INWHEEL_20150720_1310/Include/Define_ADC.h&apos; to &apos;Define_Pin.h&apos;" description="Rename resource &apos;Define_ADC.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Include/Define_ADC.h" name="Define_Pin.h" stamp="1437367449679" updateReferences="true"/>
-</session>

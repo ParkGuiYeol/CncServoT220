@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Wia_Edu_20140616/source/BLDCM&apos; to &apos;BLDCM.c&apos;" description="Rename resource &apos;BLDCM&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="source/BLDCM" name="BLDCM.c" stamp="1402989003171" updateReferences="true"/>
-</session>

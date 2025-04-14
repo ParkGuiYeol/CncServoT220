@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;SERVO_DRVIE_28346_230529_2052&apos; to &apos;Kcnc_K002_Tool_2P0_220V_241116_1525&apos;" description="Rename resource &apos;SERVO_DRVIE_28346_230529_2052&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SERVO_DRVIE_28346_230529_2052" name="Kcnc_K002_Tool_2P0_220V_241116_1525" stamp="1731738353773" updateReferences="true"/>
-</session>

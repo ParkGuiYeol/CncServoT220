@@ -1,8 +1,0 @@
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:28335.ccxml,org.eclipse.launchbar.core.descriptorType.default\:28346.ccxml,org.eclipse.launchbar.core.descriptorType.default\:SDS100i_28346.ccxml,org.eclipse.launchbar.core.descriptorType.default\:sds100_28346.ccxml,org.eclipse.launchbar.core.descriptorType.default\:SDS200i_C28346.ccxml,org.eclipse.launchbar.core.descriptorType.default\:TDS510USB_28335.ccxml,org.eclipse.launchbar.core.descriptorType.default\:TMS320C28346.ccxml,org.eclipse.launchbar.core.descriptorType.default\:DH_INWHEEL_20150713_1018,org.eclipse.launchbar.core.descriptorType.default\:WiaSet_Test_20140615
-eclipse.preferences.version=1
-org.eclipse.launchbar.core.descriptorType.default\:28335.ccxml/activeLaunchMode=run
-org.eclipse.launchbar.core.descriptorType.default\:28335.ccxml/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
-org.eclipse.launchbar.core.descriptorType.default\:SDS200i_C28346.ccxml/activeLaunchMode=debug

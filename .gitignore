@@ -12,5 +12,5 @@
 **/Debug/
 
 # 사용자 설정 및 메타데이터 무시
-# .jxbrowser.userdata/
-# .metadata/
+.jxbrowser.userdata/
+.metadata/
