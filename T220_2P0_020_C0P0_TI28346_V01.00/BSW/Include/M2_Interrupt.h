@@ -39,9 +39,9 @@ typedef union{
         uint16_T  uBrake:1;         // 02
         uint16_T  uOrgOut:1;        // 03
         uint16_T  uInPst:1;         // 04
-        uint16_T  uFltCode:4;       // 05-08
-        uint16_T  uActPst:6;        // 09-14
-        uint16_T  uOrgNotDef:1;     // 15
+        uint16_T  uActPst:6;        // 05-10
+        uint16_T  uOrgNotDef:1;     // 11
+        uint16_T  uSpare:1;         // 12-15
     } bit;
 } S_EXOUTPUT;
 

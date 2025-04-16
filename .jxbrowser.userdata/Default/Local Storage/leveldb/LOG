@@ -1,2 +1,3 @@
-2023/05/29-19:56:25.934 26fc Creating DB D:\6_CncServo\1_CncServCode\2_OldCode\1_SERVO\1_WIA_DRIVE_28346\.jxbrowser.userdata\Default\Local Storage\leveldb since it was missing.
-2023/05/29-19:56:25.951 26fc Reusing MANIFEST D:\6_CncServo\1_CncServCode\2_OldCode\1_SERVO\1_WIA_DRIVE_28346\.jxbrowser.userdata\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/15-20:06:09.203 2154 Reusing MANIFEST D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\.jxbrowser.userdata\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/15-20:06:09.204 2154 Recovering log #3
+2025/04/15-20:06:09.205 2154 Reusing old log D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\.jxbrowser.userdata\Default\Local Storage\leveldb/000003.log 

@@ -1,2 +1,3 @@
-2023/05/29-19:56:25.899 1294 Creating DB D:\6_CncServo\1_CncServCode\2_OldCode\1_SERVO\1_WIA_DRIVE_28346\.jxbrowser.userdata\Default\Site Characteristics Database since it was missing.
-2023/05/29-19:56:25.928 1294 Reusing MANIFEST D:\6_CncServo\1_CncServCode\2_OldCode\1_SERVO\1_WIA_DRIVE_28346\.jxbrowser.userdata\Default\Site Characteristics Database/MANIFEST-000001
+2025/04/15-20:06:09.064 5918 Reusing MANIFEST D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\.jxbrowser.userdata\Default\Site Characteristics Database/MANIFEST-000001
+2025/04/15-20:06:09.074 5918 Recovering log #3
+2025/04/15-20:06:09.075 5918 Reusing old log D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\.jxbrowser.userdata\Default\Site Characteristics Database/000003.log 
