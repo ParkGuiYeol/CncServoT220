@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="3754813278" file="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD\CI_CD.prj" location="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD" name="CI_CD" target="target.mlapps" target-name="앱 패키징">
+  <configuration build-checksum="2973602959" file="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD\CI_CD.prj" location="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD" name="CI_CD" target="target.mlapps" target-name="앱 패키징">
     <param.appname>CI_CD</param.appname>
     <param.authnamewatermark>gypark</param.authnamewatermark>
     <param.email>pgy2994@gmail.com</param.email>
@@ -8,8 +8,8 @@
     <param.icons />
     <param.summary />
     <param.description />
-    <param.screenshot>C:\Users\admin\AppData\Local\Temp\tpfb865d92_b9f1_4dc6_9571_3b51adb1d166.png</param.screenshot>
-    <param.version>1.0</param.version>
+    <param.screenshot>C:\Users\admin\AppData\Local\Temp\tp418ee3c5_84ae_4786_bbe1_b86ca3b8fe4e.png</param.screenshot>
+    <param.version>1.2</param.version>
     <param.products.name />
     <param.products.id />
     <param.products.version />
@@ -21,7 +21,6 @@
       <param.icons />
       <param.summary />
       <param.description />
-      <param.version />
       <param.products.name />
       <param.products.id />
       <param.products.version />
