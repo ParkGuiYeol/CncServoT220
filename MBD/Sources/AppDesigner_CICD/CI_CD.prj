@@ -1,0 +1,87 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="3754813278" file="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD\CI_CD.prj" location="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD" name="CI_CD" target="target.mlapps" target-name="앱 패키징">
+    <param.appname>CI_CD</param.appname>
+    <param.authnamewatermark>gypark</param.authnamewatermark>
+    <param.email>pgy2994@gmail.com</param.email>
+    <param.company>EE</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary />
+    <param.description />
+    <param.screenshot>C:\Users\admin\AppData\Local\Temp\tpfb865d92_b9f1_4dc6_9571_3b51adb1d166.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>42d29030-5ef8-4794-9cd4-5fd0a09377de</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.summary />
+      <param.description />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\MBD_CICD.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\Configuration\GenCodeFunction.mlx</file>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\Configuration\SubCodeGen.mlx</file>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\LibScript\Ftn_ExportSwcPortInfo.mlx</file>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\LibScript\Ftn_GetFunctionInfo.mlx</file>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\LibScript\Ftn_SetFunctionInfo.mlx</file>
+      <file>D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Libraries\LibScript\progressbar.m</file>
+    </fileset.depfun>
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources" name="AppDesigner_CICD" optional="false">D:\6_CncServo\1_CncServoCode\2_KCNC_T220_2P0_020_TI28346_GitHub\MBD\Sources\AppDesigner_CICD</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2024a</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="fixedpoint" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
