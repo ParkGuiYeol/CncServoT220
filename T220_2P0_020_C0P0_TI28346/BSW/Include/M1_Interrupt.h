@@ -20,6 +20,7 @@
 #include "e02_MtrCtrl_Pst.h"
 #include "e03_MtrCtrl_MtrCtrl.h"
 #include "e04_MtrCtrl_PwmSet.h"
+#include "h01_MdeMgmt.h"
 #include "j01_McuInit.h"
 
 /* user code (bottom of header file) */

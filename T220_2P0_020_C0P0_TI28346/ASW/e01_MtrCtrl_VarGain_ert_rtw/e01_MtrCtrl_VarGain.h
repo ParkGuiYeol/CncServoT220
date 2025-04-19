@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.579
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Fri Apr 11 21:57:55 2025
+ * C/C++ source code generated on : Sat Apr 19 16:29:20 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -113,69 +113,8 @@ typedef struct
 }
 StrE01DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    uint16_T bH01SMDE_mSMDE_uFlagInverterOut;
-                                  /* '<Root>/bH01SMDE_mSMDE_uFlagInverterOut' */
-    real32_T bH01SMDE_mSMDE_sSpdRefInSeqOut;
-                                   /* '<Root>/bH01SMDE_mSMDE_sSpdRefInSeqOut' */
-    real32_T bH01SMDE_mSMDE_sSpdLimit; /* '<Root>/bH01SMDE_mSMDE_sSpdLimit' */
-    real32_T bH01SMDE_mSMDE_sSpdRef;   /* '<Root>/bH01SMDE_mSMDE_sSpdRef' */
-    real32_T bH01SMDE_mSMDE_sPstRef;   /* '<Root>/bH01SMDE_mSMDE_sPstRef' */
-    real32_T bH01SMDE_mSMDE_sIfFreqSeqOut;
-                                     /* '<Root>/bH01SMDE_mSMDE_sIfFreqSeqOut' */
-    uint16_T bH01SMDE_mSMDE_uOprState; /* '<Root>/bH01SMDE_mSMDE_uOprState' */
-    uint16_T bH01SMDE_mSMDE_uFlagSaveEncOrig;
-                                /* '<Root>/bH01SMDE_mSMDE_uFlagSaveEncOrigin' */
-    uint16_T bH01SMDE_mSMDE_uFlagResetEnc;
-                                     /* '<Root>/bH01SMDE_mSMDE_uFlagResetEnc' */
-    int64_T bH01SMDE_mSMDE_i64PstOrigin;
-                                      /* '<Root>/bH01SMDE_mSMDE_i64PstOrigin' */
-    int64_T bH01SMDE_mSMDE_i64PstRef;  /* '<Root>/bH01SMDE_mSMDE_i64PstRef' */
-    real32_T bH01SMDE_mSMDE_sRefAngle; /* '<Root>/bH01SMDE_mSMDE_sRefAngle' */
-    real32_T bH01SMDE_mSMDE_sActAngle; /* '<Root>/bH01SMDE_mSMDE_sActAngle' */
-    real32_T bH01SMDE_mSMDE_sAngleErr; /* '<Root>/bH01SMDE_mSMDE_sAngleErr' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uAlarm;
-                                     /* '<Root>/bH01SMDE_mSMDE_uExOut_uAlarm' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uStadby;
-                                    /* '<Root>/bH01SMDE_mSMDE_uExOut_uStadby' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uBrake;
-                                     /* '<Root>/bH01SMDE_mSMDE_uExOut_uBrake' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uOrgOut;
-                                    /* '<Root>/bH01SMDE_mSMDE_uExOut_uOrgOut' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uInPst;
-                                     /* '<Root>/bH01SMDE_mSMDE_uExOut_uInPst' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uFltCode;
-                                   /* '<Root>/bH01SMDE_mSMDE_uExOut_uFltCode' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uActPst;
-                                    /* '<Root>/bH01SMDE_mSMDE_uExOut_uActPst' */
-    uint16_T bH01SMDE_mSMDE_uExOut_uOrgNotDe;
-                                 /* '<Root>/bH01SMDE_mSMDE_uExOut_uOrgNotDef' */
-    real32_T bE03MCTRLZ_mCTRL_sIsRef;  /* '<Root>/bE03MCTRLZ_mCTRL_sIsRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIdeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sIdeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIqeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sIqeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIde;    /* '<Root>/bE03MCTRLZ_mCTRL_sIde' */
-    real32_T bE03MCTRLZ_mCTRL_sIqe;    /* '<Root>/bE03MCTRLZ_mCTRL_sIqe' */
-    real32_T bE03MCTRLZ_mCTRL_sIfTheta;/* '<Root>/bE03MCTRLZ_mCTRL_sIfTheta' */
-    real32_T bE03MCTRLZ_mCTRL_sIfFreq; /* '<Root>/bE03MCTRLZ_mCTRL_sIfFreq' */
-    real32_T bE03MCTRLZ_mCTRL_sSpdRefIn;/* '<Root>/bE03MCTRLZ_mCTRL_sSpdRefIn' */
-    real32_T bE03MCTRLZ_mCTRL_sVdeRefLow;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sVdeRefLow' */
-    real32_T bE03MCTRLZ_mCTRL_sVqeRefLow;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sVqeRefLow' */
-    real32_T bE03MCTRLZ_mCTRL_sVdeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sVdeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sVqeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sVqeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sThetaCtrl;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sThetaCtrl' */
-}
-StrE01ExtU;
-
 /* Block signals and states (default storage) */
 extern StrE01DW GvE01DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrE01ExtU GvE01U;
 
 /*
  * Exported Global Signals

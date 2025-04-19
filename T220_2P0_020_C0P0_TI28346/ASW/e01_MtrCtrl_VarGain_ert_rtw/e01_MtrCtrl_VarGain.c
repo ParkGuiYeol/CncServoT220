@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.579
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Fri Apr 11 21:57:55 2025
+ * C/C++ source code generated on : Sat Apr 19 16:29:20 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -21,7 +21,6 @@
 #include "e01_MtrCtrl_VarGain.h"
 #include <math.h>
 #include "rtwtypes.h"
-#include <string.h>
 #include "e02_MtrCtrl_Pst.h"
 #include "b01_OSnScheduler.h"
 #include "h01_MdeMgmt.h"
@@ -73,14 +72,14 @@ static S_E01CCG E01CCG =
 
 static S_E01PCG E01PCG =
 {
-    30.0F,
-    25.0F,
-    0.0954929665F,
-    20.0F,
+    42.0F,
+    41.9F,
+    0.00190985936F,
+    41.8F,
     0.0F,
+    1.0F,
     0.0F,
-    0.0F,
-    0.001F,
+    0.04F,
     0U
 } ;                                    /* Referenced by:
                                         * '<S1>/CB_sPCG_Apst'
@@ -135,9 +134,6 @@ static S_E01SLP E01SLP =
 
 /* Block signals and states (default storage) */
 StrE01DW GvE01DW;
-
-/* External inputs (root inport signals with default storage) */
-StrE01ExtU GvE01U;
 
 /* Model step function */
 void e01_MtrCtrl_VarGain_step(void)
@@ -221,9 +217,6 @@ void e01_MtrCtrl_VarGain_initialize(void)
     /* states (dwork) */
     (void) memset((void *) &GvE01DW, 0,
                   sizeof(StrE01DW));
-
-    /* external inputs */
-    (void)memset(&GvE01U, 0, sizeof(StrE01ExtU));
 
     /* external outputs */
     mMCVG_sPCG_Kp = 0.0F;

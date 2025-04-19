@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'f01_CommRx1'.
  *
- * Model version                  : 7.308
+ * Model version                  : 7.313
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:36:42 2025
+ * C/C++ source code generated on : Sat Apr 19 16:31:41 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -20,7 +20,6 @@
 
 #include "f01_CommRx1.h"
 #include "rtwtypes.h"
-#include <string.h>
 #include "D01_DRV_CAN.h"
 #include "b01_OSnScheduler.h"
 
@@ -89,9 +88,6 @@ static S_CRX1 CRX1 =
 
 /* Block signals and states (default storage) */
 StrF01DW GvF01DW;
-
-/* External inputs (root inport signals with default storage) */
-StrF01ExtU GvF01U;
 static void Ftn_Rx1Deparsing_Init(void);
 static void Ftn_Rx1Deparsing(void);
 
@@ -159,6 +155,7 @@ static void Ftn_Rx1Deparsing(void)
         mCRX_uCtrlMde0Digt1Can = (uint16_T)GvF01DW.sParsRlt1[1];
         if (mCRX_uCtrlMde0Digt1Can == 0U)
         {
+            /*  I/O */
             mCRX_uAllowingOperation = 0U;
             mCRX_uMtrCtrlMde = 0U;
             mCRX_sVltCurrTqCmd = 0.0F;
@@ -178,6 +175,7 @@ static void Ftn_Rx1Deparsing(void)
         }
         else
         {
+            /*  CAN */
             mCRX_uAllowingOperation = (uint16_T)GvF01DW.sParsRlt1[0];
             mCRX_uMtrCtrlMde = (uint16_T)GvF01DW.sParsRlt1[2];
             mCRX_sVltCurrTqCmd = GvF01DW.sParsRlt1[3];
@@ -233,9 +231,6 @@ void f01_CommRx1_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvF01DW, 0,
                   sizeof(StrF01DW));
-
-    /* external inputs */
-    (void)memset(&GvF01U, 0, sizeof(StrF01ExtU));
 
     /* external outputs */
     mCRX_uAllowingOperation = 0U;

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e04_MtrCtrl_PwmSet'.
  *
- * Model version                  : 7.212
+ * Model version                  : 7.213
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:34:55 2025
+ * C/C++ source code generated on : Sat Apr 19 16:31:18 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -21,7 +21,6 @@
 #include "e04_MtrCtrl_PwmSet.h"
 #include <math.h>
 #include "rtwtypes.h"
-#include <string.h>
 #include "e03_MtrCtrl_MtrCtrl.h"
 #include "c01_MainAdc.h"
 #include "e02_MtrCtrl_Pst.h"
@@ -61,9 +60,6 @@ static S_E04VTDC E04VTDC =
 
 /* Block signals and states (default storage) */
 StrE04DW GvE04DW;
-
-/* External inputs (root inport signals with default storage) */
-StrE04ExtU GvE04U;
 static void Ftn_CalModulationIndex(void);
 static void Ftn_FindMinMax(void);
 static void Ftn_SVPWM(void);
@@ -211,9 +207,6 @@ void e04_MtrCtrl_PwmSet_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvE04DW, 0,
                   sizeof(StrE04DW));
-
-    /* external inputs */
-    (void)memset(&GvE04U, 0, sizeof(StrE04ExtU));
 
     /* external outputs */
     mGPwm_sVanRef = 0.0F;

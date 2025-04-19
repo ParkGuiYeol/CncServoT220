@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'g03_CommTx'.
  *
- * Model version                  : 7.357
+ * Model version                  : 7.370
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:36:57 2025
+ * C/C++ source code generated on : Sat Apr 19 17:42:21 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -20,7 +20,6 @@
 
 #include "g03_CommTx.h"
 #include "rtwtypes.h"
-#include <string.h>
 #include "c01_MainAdc.h"
 #include "c02_SubAdc.h"
 #include "e03_MtrCtrl_MtrCtrl.h"
@@ -86,9 +85,6 @@ static S_CTX3 CTX3 =
 
 /* Block signals and states (default storage) */
 StrG03DW GvG03DW;
-
-/* External inputs (root inport signals with default storage) */
-StrG03ExtU GvG03U;
 static void Ftn_CommDataParsingTx1_Init(void);
 static void Ftn_CommDataParsingTx1(void);
 static void Ftn_CommDataParsingTx2(void);
@@ -172,7 +168,7 @@ static void Ftn_CommDataParsingTx2(void)
     /* :  switch mode */
     /* :  case 1 */
     /* :  y = bitsll(cast_to_fi(u), N); */
-    mCTX_u32DataLowTx2 = ((uint32_T)mSMDE_uExternalOutput) | (((uint32_T)
+    mCTX_u32DataLowTx2 = ((uint32_T)mSMDE_uOrgNotDef) | (((uint32_T)
         mBSW_uExinputAll) << 16U);
 
     /* :  switch mode */
@@ -200,9 +196,6 @@ void g03_CommTx_initialize(void)
     /* states (dwork) */
     (void) memset((void *) &GvG03DW, 0,
                   sizeof(StrG03DW));
-
-    /* external inputs */
-    (void)memset(&GvG03U, 0, sizeof(StrG03ExtU));
 
     /* external outputs */
     mCTX_u32DataLowTx1 = 0UL;

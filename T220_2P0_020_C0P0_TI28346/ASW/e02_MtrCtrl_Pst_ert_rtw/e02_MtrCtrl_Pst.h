@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e02_MtrCtrl_Pst'.
  *
- * Model version                  : 7.576
+ * Model version                  : 7.581
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 12 01:09:17 2025
+ * C/C++ source code generated on : Sat Apr 19 16:29:46 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -95,7 +95,6 @@ typedef struct
     real32_T sLpfLowZ_g0jt;            /* '<S9>/sLpfLowZ' */
     real32_T sLpfNowZ_oyf4;            /* '<S7>/sLpfNowZ' */
     real32_T sLpfLowZ_nv33;            /* '<S7>/sLpfLowZ' */
-    real32_T Delay_DSTATE;             /* '<S6>/Delay' */
     int32_T i32CntIntegerValue;        /* '<S12>/Product1' */
     uint32_T u32EncSingleTurn;         /* '<S16>/Chart_CalSingleTurn' */
     int16_T i16PstNow;                 /* '<S12>/Data_Type_Conversion2' */
@@ -105,73 +104,8 @@ typedef struct
 }
 StrE02DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    real32_T bBSWGVAL_mBSW_sTime;      /* '<Root>/bBSWGVAL_mBSW_sTime' */
-    real32_T bBSWGVAL_mBSW_sTime2;     /* '<Root>/bBSWGVAL_mBSW_sTime2' */
-    real32_T bBSWGVAL_mBSW_sOutloopTime;/* '<Root>/bBSWGVAL_mBSW_sOutloopTime' */
-    real32_T bBSWGVAL_mBSW_sTimePstCtrl;/* '<Root>/bBSWGVAL_mBSW_sTimePstCtrl' */
-    real32_T bBSWGVAL_mBSW_sInvTimePstCtrl;
-                                    /* '<Root>/bBSWGVAL_mBSW_sInvTimePstCtrl' */
-    uint16_T bBSWGVAL_mBSW_uExinputAll;/* '<Root>/bBSWGVAL_mBSW_uExinputAll' */
-    uint16_T bBSWGVAL_mBSW_a11uReadInput[11];
-                                      /* '<Root>/bBSWGVAL_mBSW_a11uReadInput' */
-    uint16_T bBSWGVAL_mBSW_uEstpSwitchDtc;
-                                     /* '<Root>/bBSWGVAL_mBSW_uEstpSwitchDtc' */
-    uint16_T bBSWGVAL_mBSW_uGateFltDtc;/* '<Root>/bBSWGVAL_mBSW_uGateFltDtc' */
-    uint16_T bBSWGVAL_mBSW_uInitNvRam; /* '<Root>/bBSWGVAL_mBSW_uInitNvRam' */
-    uint16_T bBSWGVAL_mI2c_uFlagSaveEncOrigi;
-                                 /* '<Root>/bBSWGVAL_mI2c_uFlagSaveEncOrigin' */
-    uint16_T bBSWGVAL_mI2c_uFlagResetEnc;
-                                      /* '<Root>/bBSWGVAL_mI2c_uFlagResetEnc' */
-    real32_T bC01MADC_mMsens_sAbsIa;   /* '<Root>/bC01MADC_mMsens_sAbsIa' */
-    real32_T bC01MADC_mMsens_sAbsIb;   /* '<Root>/bC01MADC_mMsens_sAbsIb' */
-    real32_T bC01MADC_mMsens_sAbsIc;   /* '<Root>/bC01MADC_mMsens_sAbsIc' */
-    real32_T bC01MADC_mMsens_sHVdcLow; /* '<Root>/bC01MADC_mMsens_sHVdcLow' */
-    real32_T bC01MADC_mMsens_sInvHVdcLow;
-                                      /* '<Root>/bC01MADC_mMsens_sInvHVdcLow' */
-    uint16_T bD01DIAG_mDIAG_uFltStat;  /* '<Root>/bD01DIAG_mDIAG_uFltStat' */
-    uint32_T bD01DIAG_mDIAG_u32FltAll; /* '<Root>/bD01DIAG_mDIAG_u32FltAll' */
-    uint16_T bD01DIAG_mDIAG_uChprOpr1On0Off;
-                                   /* '<Root>/bD01DIAG_mDIAG_uChprOpr1On0Off' */
-    uint16_T bD01DIAG_mDIAG_uFan1On0Off;/* '<Root>/bD01DIAG_mDIAG_uFan1On0Off' */
-    uint32_T bD01DIAG_sF01_T01_EstopSwitchFl;
-                                 /* '<Root>/bD01DIAG_sF01_T01_EstopSwitchFlt' */
-    uint32_T bD01DIAG_sF02_T01_IgptShrtFlt;
-                                    /* '<Root>/bD01DIAG_sF02_T01_IgptShrtFlt' */
-    uint32_T bD01DIAG_sF03_T01_HvdcOvrVolFlt;
-                                  /* '<Root>/bD01DIAG_sF03_T01_HvdcOvrVolFlt' */
-    uint32_T bD01DIAG_sF04_T01_HvdcUdrVolFlt;
-                                  /* '<Root>/bD01DIAG_sF04_T01_HvdcUdrVolFlt' */
-    uint32_T bD01DIAG_sF05_T30_CrtSnsrFlt;
-                                     /* '<Root>/bD01DIAG_sF05_T30_CrtSnsrFlt' */
-    uint32_T bD01DIAG_sF06_T30_CrtSnsrOfsFlt;
-                                  /* '<Root>/bD01DIAG_sF06_T30_CrtSnsrOfsFlt' */
-    uint32_T bD01DIAG_sF07_T30_CrtStallFlt;
-                                    /* '<Root>/bD01DIAG_sF07_T30_CrtStallFlt' */
-    uint32_T bD01DIAG_sF08_T01_CrtOvrFlt;
-                                      /* '<Root>/bD01DIAG_sF08_T01_CrtOvrFlt' */
-    uint32_T bD01DIAG_sF09_T30_IvtTempSnsrFl;
-                                 /* '<Root>/bD01DIAG_sF09_T30_IvtTempSnsrFlt' */
-    uint32_T bD01DIAG_sF10_T30_IvtTempOvrFlt;
-                                  /* '<Root>/bD01DIAG_sF10_T30_IvtTempOvrFlt' */
-    uint32_T bD01DIAG_sF11_T30_MtrTempSnsrFl;
-                                 /* '<Root>/bD01DIAG_sF11_T30_MtrTempSnsrFlt' */
-    uint32_T bD01DIAG_sF12_T30_MtrTempOvrFlt;
-                                  /* '<Root>/bD01DIAG_sF12_T30_MtrTempOvrFlt' */
-    uint32_T bD01DIAG_sF13_T10_MtrSpdFlt;
-                                      /* '<Root>/bD01DIAG_sF13_T10_MtrSpdFlt' */
-    uint32_T bD01DIAG_sF16_T10_InitNvRam;
-                                      /* '<Root>/bD01DIAG_sF16_T10_InitNvRam' */
-}
-StrE02ExtU;
-
 /* Block signals and states (default storage) */
 extern StrE02DW GvE02DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrE02ExtU GvE02U;
 
 /*
  * Exported Global Signals

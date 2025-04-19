@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.199
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:27:45 2025
+ * C/C++ source code generated on : Sat Apr 19 16:27:39 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -21,7 +21,6 @@
 #include "c01_MainAdc.h"
 #include "rtwtypes.h"
 #include <math.h>
-#include <string.h>
 #include "L02_ADC_READ.h"
 #include "j01_McuInit.h"
 
@@ -105,9 +104,6 @@ static S_C01VTEST C01VTEST =
 
 /* Block signals and states (default storage) */
 StrC01DW GvC01DW;
-
-/* External inputs (root inport signals with default storage) */
-StrC01ExtU GvC01U;
 static void Ftn_MainAdcHVdc_Init(void);
 static void Ftn_MainAdcHVdc(void);
 static void Ftn_MainAdcMtrCurr(void);
@@ -182,9 +178,6 @@ void c01_MainAdc_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvC01DW, 0,
                   sizeof(StrC01DW));
-
-    /* external inputs */
-    (void)memset(&GvC01U, 0, sizeof(StrC01ExtU));
 
     /* external outputs */
     mMsens_sIa = 0.0F;

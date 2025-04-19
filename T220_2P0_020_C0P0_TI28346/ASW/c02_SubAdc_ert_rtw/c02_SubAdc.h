@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.333
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:28:08 2025
+ * C/C++ source code generated on : Sat Apr 19 16:28:10 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -134,27 +134,8 @@ typedef struct
 }
 StrC02DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    int32_T bADCREAD_ADR_i32IaSens;    /* '<Root>/bADCREAD_ADR_i32IaSens' */
-    int32_T bADCREAD_ADR_i32IbSens;    /* '<Root>/bADCREAD_ADR_i32IbSens' */
-    int32_T bADCREAD_ADR_i32IcSens;    /* '<Root>/bADCREAD_ADR_i32IcSens' */
-    int32_T bADCREAD_ADR_i32HVdcSens;  /* '<Root>/bADCREAD_ADR_i32HVdcSens' */
-    uint16_T bB01SCHED_mSched_uFlagSpdCtrl;
-                                    /* '<Root>/bB01SCHED_mSched_uFlagSpdCtrl' */
-    uint16_T bB01SCHED_mSched_uFlagSpdSlop;
-                                    /* '<Root>/bB01SCHED_mSched_uFlagSpdSlop' */
-    int32_T bB01SCHED_mSched_i32CntForVarGa;
-                                /* '<Root>/bB01SCHED_mSched_i32CntForVarGain' */
-}
-StrC02ExtU;
-
 /* Block signals and states (default storage) */
 extern StrC02DW GvC02DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrC02ExtU GvC02U;
 
 /*
  * Exported Global Signals

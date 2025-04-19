@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'h01_MdeMgmt'.
  *
- * Model version                  : 3.394
+ * Model version                  : 3.570
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:43:24 2025
+ * C/C++ source code generated on : Sat Apr 19 17:45:23 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -31,84 +31,111 @@
 #include "D01_DRV_CAN.h"
 #include "f01_CommRx1.h"
 #include "e03_MtrCtrl_MtrCtrl.h"
+#include "d01_Diaglnteg.h"
 #include "D02_DRV_I2C.h"
+#include "e02_MtrCtrl_Pst.h"
+#ifndef DEFINED_TYPEDEF_FOR_X_H01EXO_
+#define DEFINED_TYPEDEF_FOR_X_H01EXO_
+
+typedef struct
+{
+    uint16_T uAlarm;
+    uint16_T uStadby;
+    uint16_T uBrake;
+    uint16_T uOrgOut;
+    uint16_T uInPst;
+    uint16_T uActPst;
+    uint16_T uOrgNotDef;
+}
+X_H01EXO;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_S_H01TRT_
+#define DEFINED_TYPEDEF_FOR_S_H01TRT_
+
+typedef struct
+{
+    uint16_T uTurretDirection;
+    uint16_T u16NumOfTool;
+    real32_T sAnglePerTool;
+    real32_T sInvAnglePerTool;
+    real32_T sAngleRefMax;
+    int64_T i64EncMultiTurnMax;
+    int64_T i64EncMultiTurnOffset;
+    int64_T i64EncMultiCtrlMax;
+    int32_T i32EncMecMaxCnt;
+    real32_T sGearRatio;
+    real32_T sInvGearRatio;
+    int32_T i32BitPerRev;
+    real32_T sInvBitPerRev;
+    real32_T sAngleTrGain;
+    uint16_T uDummy;
+}
+S_H01TRT;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_S_H01MDE_
+#define DEFINED_TYPEDEF_FOR_S_H01MDE_
+
+typedef struct
+{
+    real32_T i32CntSetRdyRestart;
+    real32_T i32CntSetInPst;
+    real32_T sSetInPstAngleErr;
+    real32_T sOprMdeSpdLim;
+    real32_T sMpgJogMdeSpdLim;
+    real32_T sJogMdeSpdLim;
+    real32_T sSpare1;
+    real32_T sSpare2;
+    real32_T sSpare3;
+    real32_T sSpare4;
+    real32_T sSpare5;
+    real32_T sSpare6;
+    real32_T sSpare7;
+    uint16_T uDummy;
+}
+S_H01MDE;
+
+#endif
 
 /* Block signals and states (default storage) for system '<Root>' */
 typedef struct
 {
+    real32_T sNumTool;                 /* '<S1>/Chart_StateManagement' */
+    real32_T sRxRefAngle;              /* '<S1>/Chart_StateManagement' */
+    int32_T i32CntSenless;             /* '<S1>/Chart_StateManagement' */
+    uint16_T mSMDE_uFlagRestart;       /* '<S1>/Chart_StateManagement' */
     uint16_T uFlagResetEncZ;           /* '<S1>/Chart_StateManagement' */
     uint16_T uFlagSaveEncOriginZ;      /* '<S1>/Chart_StateManagement' */
-    uint8_T is_active_c3_h01_MdeMgmt;  /* '<S1>/Chart_StateManagement' */
-    uint8_T is_c3_h01_MdeMgmt;         /* '<S1>/Chart_StateManagement' */
+    uint16_T uNexRefPst;               /* '<S1>/Chart_StateManagement' */
+    uint16_T uDoginZ;                  /* '<S1>/Chart_StateManagement' */
+    uint16_T uOrginZ;                  /* '<S1>/Chart_StateManagement' */
+    uint16_T uFlagCmpltOpMde;          /* '<S1>/Chart_StateManagement' */
+    uint16_T uFalg_NJog_Step;          /* '<S1>/Chart_StateManagement' */
+    uint16_T uFalg_PJog_Step;          /* '<S1>/Chart_StateManagement' */
+    uint16_T uFlagStepJogMde;          /* '<S1>/Chart_StateManagement' */
+    uint16_T uStartZ;                  /* '<S1>/Chart_StateManagement' */
+    uint8_T is_active_c4_h01_MdeMgmt;  /* '<S1>/Chart_StateManagement' */
+    uint8_T is_c4_h01_MdeMgmt;         /* '<S1>/Chart_StateManagement' */
+    uint8_T is_Normal;                 /* '<S1>/Chart_StateManagement' */
 }
 StrH01DW;
 
-/* External inputs (root inport signals with default storage) */
+/* External outputs (root outports fed by signals with default storage) */
 typedef struct
 {
-    uint32_T bCOMRX_mCRX1_u32CrrDataLow;/* '<Root>/bCOMRX_mCRX1_u32CrrDataLow' */
-    uint32_T bCOMRX_mCRX1_u32CrrDataHigh;
-                                      /* '<Root>/bCOMRX_mCRX1_u32CrrDataHigh' */
-    uint16_T bF01CRX1_mCRX_uCtrlMde0Digt1Can;
-                                  /* '<Root>/bF01CRX1_mCRX_uCtrlMde0Digt1Can' */
-    real32_T bF01CRX1_mCRX_sVltCurrTqCmd;
-                                      /* '<Root>/bF01CRX1_mCRX_sVltCurrTqCmd' */
-    real32_T bF01CRX1_mCRX_sFreqBetaCmd;/* '<Root>/bF01CRX1_mCRX_sFreqBetaCmd' */
-    uint16_T bF01CRX1_mCRX_uSvOn;      /* '<Root>/bF01CRX1_mCRX_uSvOn' */
-    uint16_T bF01CRX1_mCRX_uStart;     /* '<Root>/bF01CRX1_mCRX_uStart' */
-    uint16_T bF01CRX1_mCRX_uEmg;       /* '<Root>/bF01CRX1_mCRX_uEmg' */
-    uint16_T bF01CRX1_mCRX_uAlarmRst;  /* '<Root>/bF01CRX1_mCRX_uAlarmRst' */
-    uint16_T bF01CRX1_mCRX_uRefPst;    /* '<Root>/bF01CRX1_mCRX_uRefPst' */
-    uint16_T bF01CRX1_mCRX_uStop;      /* '<Root>/bF01CRX1_mCRX_uStop' */
-    uint16_T bF01CRX1_mCRX_uPJog;      /* '<Root>/bF01CRX1_mCRX_uPJog' */
-    uint16_T bF01CRX1_mCRX_uNJog;      /* '<Root>/bF01CRX1_mCRX_uNJog' */
-    uint16_T bF01CRX1_mCRX_uEnMpg;     /* '<Root>/bF01CRX1_mCRX_uEnMpg' */
-    uint16_T bF01CRX1_mCRX_uDaCase;    /* '<Root>/bF01CRX1_mCRX_uDaCase' */
-    real32_T bE03MCTRLZ_mCTRL_sIsRef;  /* '<Root>/bE03MCTRLZ_mCTRL_sIsRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIdeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sIdeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIqeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sIqeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sIde;    /* '<Root>/bE03MCTRLZ_mCTRL_sIde' */
-    real32_T bE03MCTRLZ_mCTRL_sIqe;    /* '<Root>/bE03MCTRLZ_mCTRL_sIqe' */
-    real32_T bE03MCTRLZ_mCTRL_sIfTheta;/* '<Root>/bE03MCTRLZ_mCTRL_sIfTheta' */
-    real32_T bE03MCTRLZ_mCTRL_sTqRefIn;/* '<Root>/bE03MCTRLZ_mCTRL_sTqRefIn' */
-    real32_T bE03MCTRLZ_mCTRL_sVdeRefLow;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sVdeRefLow' */
-    real32_T bE03MCTRLZ_mCTRL_sVqeRefLow;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sVqeRefLow' */
-    real32_T bE03MCTRLZ_mCTRL_sVdeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sVdeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sVqeRef; /* '<Root>/bE03MCTRLZ_mCTRL_sVqeRef' */
-    real32_T bE03MCTRLZ_mCTRL_sThetaCtrl;
-                                      /* '<Root>/bE03MCTRLZ_mCTRL_sThetaCtrl' */
-    real32_T bBSWGVAL_mBSW_sTime;      /* '<Root>/bBSWGVAL_mBSW_sTime' */
-    real32_T bBSWGVAL_mBSW_sTime2;     /* '<Root>/bBSWGVAL_mBSW_sTime2' */
-    real32_T bBSWGVAL_mBSW_sOutloopTime;/* '<Root>/bBSWGVAL_mBSW_sOutloopTime' */
-    real32_T bBSWGVAL_mBSW_sFreq;      /* '<Root>/bBSWGVAL_mBSW_sFreq' */
-    uint16_T bBSWGVAL_mBSW_uExinputAll;/* '<Root>/bBSWGVAL_mBSW_uExinputAll' */
-    uint16_T bBSWGVAL_mBSW_a11uReadInput[11];
-                                      /* '<Root>/bBSWGVAL_mBSW_a11uReadInput' */
-    uint16_T bBSWGVAL_mBSW_uEstpSwitchDtc;
-                                     /* '<Root>/bBSWGVAL_mBSW_uEstpSwitchDtc' */
-    uint16_T bBSWGVAL_mBSW_uGateFltDtc;/* '<Root>/bBSWGVAL_mBSW_uGateFltDtc' */
-    uint16_T bBSWGVAL_mBSW_uInitNvRam; /* '<Root>/bBSWGVAL_mBSW_uInitNvRam' */
-    uint16_T bBSWGVAL_mEnc_uCF;        /* '<Root>/bBSWGVAL_mEnc_uCF' */
-    uint16_T bBSWGVAL_mEnc_uSF;        /* '<Root>/bBSWGVAL_mEnc_uSF' */
-    uint16_T bBSWGVAL_mEnc_uEND;       /* '<Root>/bBSWGVAL_mEnc_uEND' */
-    uint16_T bBSWGVAL_mEnc_uALMC;      /* '<Root>/bBSWGVAL_mEnc_uALMC' */
-    uint16_T bBSWGVAL_mEnc_uCRC;       /* '<Root>/bBSWGVAL_mEnc_uCRC' */
-    uint16_T bBSWGVAL_mEnc_uABS0;      /* '<Root>/bBSWGVAL_mEnc_uABS0' */
-    uint16_T bBSWGVAL_mEnc_uABS1;      /* '<Root>/bBSWGVAL_mEnc_uABS1' */
-    uint16_T bBSWGVAL_mEnc_uABS2;      /* '<Root>/bBSWGVAL_mEnc_uABS2' */
-    uint16_T bBSWGVAL_mEnc_uABM0;      /* '<Root>/bBSWGVAL_mEnc_uABM0' */
-    uint16_T bBSWGVAL_mEnc_uABM1;      /* '<Root>/bBSWGVAL_mEnc_uABM1' */
-    uint16_T bBSWGVAL_mEnc_uABM2;      /* '<Root>/bBSWGVAL_mEnc_uABM2' */
+    real32_T bH01SMDE_mSMDE_sPstRef;   /* '<Root>/bH01SMDE_mSMDE_sPstRef' */
+    X_H01EXO bH01SMDE_mSMDE_uExOut;    /* '<Root>/bH01SMDE_mSMDE_uExOut' */
 }
-StrH01ExtU;
+StrH01ExtY;
 
 /* Block signals and states (default storage) */
 extern StrH01DW GvH01DW;
 
-/* External inputs (root inport signals with default storage) */
-extern StrH01ExtU GvH01U;
+/* External outputs (root outports fed by signals with default storage) */
+extern StrH01ExtY GvH01Y;
 
 /*
  * Exported Global Signals
@@ -122,6 +149,7 @@ extern uint16_T mSMDE_uFlagInverterOut;
                                   /* '<Root>/bH01SMDE_mSMDE_uFlagInverterOut' */
 extern real32_T mSMDE_sSpdRefInSeqOut;
                                    /* '<Root>/bH01SMDE_mSMDE_sSpdRefInSeqOut' */
+extern real32_T mSMDE_sSpdLimit;       /* '<Root>/bH01SMDE_mSMDE_sSpdLimit' */
 extern real32_T mSMDE_sSpdRef;         /* '<Root>/bH01SMDE_mSMDE_sSpdRef' */
 extern real32_T mSMDE_sIfFreqSeqOut; /* '<Root>/bH01SMDE_mSMDE_sIfFreqSeqOut' */
 extern uint16_T mSMDE_uMtrCtrlMde;     /* '<Root>/bH01SMDE_mSMDE_uMtrCtrlMde' */
@@ -131,8 +159,13 @@ extern uint16_T mSMDE_uFlagSaveEncOrigin;
 extern uint16_T mSMDE_uFlagResetEnc; /* '<Root>/bH01SMDE_mSMDE_uFlagResetEnc' */
 extern int64_T mSMDE_i64PstOrigin;    /* '<Root>/bH01SMDE_mSMDE_i64PstOrigin' */
 extern int64_T mSMDE_i64PstRef;        /* '<Root>/bH01SMDE_mSMDE_i64PstRef' */
-extern uint16_T mSMDE_uExternalOutput;
-                                   /* '<Root>/bH01SMDE_mSMDE_uExternalOutput' */
+extern real32_T mSMDE_sRefAngleDisp; /* '<Root>/bH01SMDE_mSMDE_sRefAngleDisp' */
+extern real32_T mSMDE_sActAngleDisp; /* '<Root>/bH01SMDE_mSMDE_sActAngleDisp' */
+extern real32_T mSMDE_sAngleErrDisp; /* '<Root>/bH01SMDE_mSMDE_sAngleErrDisp' */
+extern real32_T mSMDE_sRefAngle;       /* '<Root>/bH01SMDE_mSMDE_sRefAngle' */
+extern real32_T mSMDE_sActAngle;       /* '<Root>/bH01SMDE_mSMDE_sActAngle' */
+extern real32_T mSMDE_sAngleErr;       /* '<Root>/bH01SMDE_mSMDE_sAngleErr' */
+extern uint16_T mSMDE_uOrgNotDef;      /* '<Root>/bH01SMDE_mSMDE_uOrgNotDef' */
 
 /* Model entry point functions */
 extern void h01_MdeMgmt_initialize(void);

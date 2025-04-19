@@ -16,9 +16,10 @@ int32_T i32CntDigtInDeb = 0;
 int32_T i32DigtInDebCntSet = 0;
 uint16_T mBSW_uEstpSwitchDtc = 0U;
 uint16_T mBSW_a11uReadInput[11] = {0U};
-S_EXINPUT uEXINPUT = {0U}, uEXINPUT_Z = {0U};
 uint16_T mBSW_uExinputAll = 0U;
+S_EXINPUT uEXINPUT = {0U}, uEXINPUT_Z = {0U};
 S_EXOUTPUT uEXOUTPUT = {0U};
+
 
 /* Block signals and states (default storage) */
 static void ExDigInput(void);
@@ -44,7 +45,7 @@ interrupt void M2_Interrupt(void)
     ExDigOutput();
 
     /* External Digital Output */
-    FPGA_Send(0x05, mSMDE_uExternalOutput);                   // I/O Output.
+    FPGA_Send(0x05, uEXOUTPUT.all);    // I/O Output.
 
     M2_INT_OFF;                        // Interrupt Start Signal(DSP to FPGA)
     EPwm2Regs.ETCLR.bit.INT = 1;       // ePWM1 Interrupt Clear
@@ -132,7 +133,11 @@ void ExDigInput(void)
 
 void ExDigOutput(void)
 {
-    uEXOUTPUT.all = mSMDE_uExternalOutput;
+    uEXOUTPUT.bit.uStadby = GvH01Y.bH01SMDE_mSMDE_uExOut.uStadby;
+    uEXOUTPUT.bit.uActPst = GvH01Y.bH01SMDE_mSMDE_uExOut.uActPst;
+    uEXOUTPUT.bit.uAlarm = GvH01Y.bH01SMDE_mSMDE_uExOut.uAlarm;
+    uEXOUTPUT.bit.uInPst = GvH01Y.bH01SMDE_mSMDE_uExOut.uInPst;
+    uEXOUTPUT.bit.uOrgNotDef = GvH01Y.bH01SMDE_mSMDE_uExOut.uOrgNotDef;
 }
 
 void DigitalOutSet(void)

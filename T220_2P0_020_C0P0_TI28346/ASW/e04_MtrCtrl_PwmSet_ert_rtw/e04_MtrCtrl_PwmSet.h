@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e04_MtrCtrl_PwmSet'.
  *
- * Model version                  : 7.212
+ * Model version                  : 7.213
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:34:55 2025
+ * C/C++ source code generated on : Sat Apr 19 16:31:18 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -71,45 +71,8 @@ typedef struct
 }
 StrE04DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    real32_T bC01MADC_mMsens_sIa;      /* '<Root>/bC01MADC_mMsens_sIa' */
-    real32_T bC01MADC_mMsens_sIb;      /* '<Root>/bC01MADC_mMsens_sIb' */
-    real32_T bC01MADC_mMsens_sIc;      /* '<Root>/bC01MADC_mMsens_sIc' */
-    real32_T bC01MADC_mMsens_sAbsIa;   /* '<Root>/bC01MADC_mMsens_sAbsIa' */
-    real32_T bC01MADC_mMsens_sAbsIb;   /* '<Root>/bC01MADC_mMsens_sAbsIb' */
-    real32_T bC01MADC_mMsens_sAbsIc;   /* '<Root>/bC01MADC_mMsens_sAbsIc' */
-    real32_T bE02MTPST_mMTPST_sWe;     /* '<Root>/bE02MTPST_mMTPST_sWe' */
-    real32_T bE02MTPST_mMTPST_sRpm;    /* '<Root>/bE02MTPST_mMTPST_sRpm' */
-    real32_T bE02MTPST_mMTPST_sTheta;  /* '<Root>/bE02MTPST_mMTPST_sTheta' */
-    uint32_T bE02MTPST_mMTPST_u32EncMultiTur;
-                                 /* '<Root>/bE02MTPST_mMTPST_u32EncMultiTurn' */
-    int64_T bE02MTPST_mMTPST_i64TurretPst;
-                                    /* '<Root>/bE02MTPST_mMTPST_i64TurretPst' */
-    real32_T bE02MTPST_mMTPST_sIde;    /* '<Root>/bE02MTPST_mMTPST_sIde' */
-    real32_T bE02MTPST_mMTPST_sIqe;    /* '<Root>/bE02MTPST_mMTPST_sIqe' */
-    real32_T bE02MTPST_mMTPST_sIds;    /* '<Root>/bE02MTPST_mMTPST_sIds' */
-    real32_T bE02MTPST_mMTPST_sIqs;    /* '<Root>/bE02MTPST_mMTPST_sIqs' */
-    real32_T bE03MCTRL_mCTRL_sIsRef;   /* '<Root>/bE03MCTRL_mCTRL_sIsRef' */
-    real32_T bE03MCTRL_mCTRL_sIdeRef;  /* '<Root>/bE03MCTRL_mCTRL_sIdeRef' */
-    real32_T bE03MCTRL_mCTRL_sIqeRef;  /* '<Root>/bE03MCTRL_mCTRL_sIqeRef' */
-    real32_T bE03MCTRL_mCTRL_sIde;     /* '<Root>/bE03MCTRL_mCTRL_sIde' */
-    real32_T bE03MCTRL_mCTRL_sIqe;     /* '<Root>/bE03MCTRL_mCTRL_sIqe' */
-    real32_T bE03MCTRL_mCTRL_sIfTheta; /* '<Root>/bE03MCTRL_mCTRL_sIfTheta' */
-    real32_T bE03MCTRL_mCTRL_sIfFreq;  /* '<Root>/bE03MCTRL_mCTRL_sIfFreq' */
-    real32_T bE03MCTRL_mCTRL_sSpdRefIn;/* '<Root>/bE03MCTRL_mCTRL_sSpdRefIn' */
-    real32_T bE03MCTRL_mCTRL_sTqRefIn; /* '<Root>/bE03MCTRL_mCTRL_sTqRefIn' */
-    real32_T bE03MCTRL_mCTRL_sVdeRefLow;/* '<Root>/bE03MCTRL_mCTRL_sVdeRefLow' */
-    real32_T bE03MCTRL_mCTRL_sVqeRefLow;/* '<Root>/bE03MCTRL_mCTRL_sVqeRefLow' */
-}
-StrE04ExtU;
-
 /* Block signals and states (default storage) */
 extern StrE04DW GvE04DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrE04ExtU GvE04U;
 
 /*
  * Exported Global Signals

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'f01_CommRx1'.
  *
- * Model version                  : 7.308
+ * Model version                  : 7.313
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:36:42 2025
+ * C/C++ source code generated on : Sat Apr 19 16:31:41 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -59,41 +59,8 @@ typedef struct
 }
 StrF01DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    real32_T bBSWGVAL_mBSW_sTime;      /* '<Root>/bBSWGVAL_mBSW_sTime' */
-    real32_T bBSWGVAL_mBSW_sTime2;     /* '<Root>/bBSWGVAL_mBSW_sTime2' */
-    real32_T bBSWGVAL_mBSW_sOutloopTime;/* '<Root>/bBSWGVAL_mBSW_sOutloopTime' */
-    real32_T bBSWGVAL_mBSW_sFreq;      /* '<Root>/bBSWGVAL_mBSW_sFreq' */
-    uint16_T bBSWGVAL_mBSW_uExinputAll;/* '<Root>/bBSWGVAL_mBSW_uExinputAll' */
-    uint16_T bBSWGVAL_mBSW_uEstpSwitchDtc;
-                                     /* '<Root>/bBSWGVAL_mBSW_uEstpSwitchDtc' */
-    uint16_T bBSWGVAL_mBSW_uGateFltDtc;/* '<Root>/bBSWGVAL_mBSW_uGateFltDtc' */
-    uint16_T bBSWGVAL_mBSW_uInitNvRam; /* '<Root>/bBSWGVAL_mBSW_uInitNvRam' */
-    uint16_T bBSWGVAL_mI2c_uFlagSaveEncOrigi;
-                                 /* '<Root>/bBSWGVAL_mI2c_uFlagSaveEncOrigin' */
-    uint16_T bBSWGVAL_mI2c_uFlagResetEnc;
-                                      /* '<Root>/bBSWGVAL_mI2c_uFlagResetEnc' */
-    uint16_T bBSWGVAL_mEnc_uCF;        /* '<Root>/bBSWGVAL_mEnc_uCF' */
-    uint16_T bBSWGVAL_mEnc_uSF;        /* '<Root>/bBSWGVAL_mEnc_uSF' */
-    uint16_T bBSWGVAL_mEnc_uEND;       /* '<Root>/bBSWGVAL_mEnc_uEND' */
-    uint16_T bBSWGVAL_mEnc_uALMC;      /* '<Root>/bBSWGVAL_mEnc_uALMC' */
-    uint16_T bBSWGVAL_mEnc_uCRC;       /* '<Root>/bBSWGVAL_mEnc_uCRC' */
-    uint16_T bBSWGVAL_mEnc_uABS0;      /* '<Root>/bBSWGVAL_mEnc_uABS0' */
-    uint16_T bBSWGVAL_mEnc_uABS1;      /* '<Root>/bBSWGVAL_mEnc_uABS1' */
-    uint16_T bBSWGVAL_mEnc_uABS2;      /* '<Root>/bBSWGVAL_mEnc_uABS2' */
-    uint16_T bBSWGVAL_mEnc_uABM0;      /* '<Root>/bBSWGVAL_mEnc_uABM0' */
-    uint16_T bBSWGVAL_mEnc_uABM1;      /* '<Root>/bBSWGVAL_mEnc_uABM1' */
-    uint16_T bBSWGVAL_mEnc_uABM2;      /* '<Root>/bBSWGVAL_mEnc_uABM2' */
-}
-StrF01ExtU;
-
 /* Block signals and states (default storage) */
 extern StrF01DW GvF01DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrF01ExtU GvF01U;
 
 /*
  * Exported Global Signals

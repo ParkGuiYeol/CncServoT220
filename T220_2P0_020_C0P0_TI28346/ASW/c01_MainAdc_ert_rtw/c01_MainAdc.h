@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.199
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:27:45 2025
+ * C/C++ source code generated on : Sat Apr 19 16:27:39 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -101,26 +101,8 @@ typedef struct
 }
 StrC01DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    int32_T bADCREAD_ADR_i32IcSens;    /* '<Root>/bADCREAD_ADR_i32IcSens' */
-    int32_T bADCREAD_ADR_i32IvtTempSens;
-                                      /* '<Root>/bADCREAD_ADR_i32IvtTempSens' */
-    int32_T bADCREAD_ADR_i32MtrTempSens;
-                                      /* '<Root>/bADCREAD_ADR_i32MtrTempSens' */
-    uint16_T bJ01MINITZ_mMinit_uFlgChangeISR;
-                                  /* '<Root>/bJ01MINITZ_mMinit_uFlgChangeISR' */
-    uint16_T bJ01MINITZ_mMinit_uHwFltCurrOff;
-                               /* '<Root>/bJ01MINITZ_mMinit_uHwFltCurrOffset' */
-}
-StrC01ExtU;
-
 /* Block signals and states (default storage) */
 extern StrC01DW GvC01DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrC01ExtU GvC01U;
 
 /*
  * Exported Global Signals

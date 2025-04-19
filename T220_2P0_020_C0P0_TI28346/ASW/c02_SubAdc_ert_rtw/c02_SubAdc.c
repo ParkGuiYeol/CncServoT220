@@ -5,7 +5,7 @@
  *
  * Model version                  : 7.333
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:28:08 2025
+ * C/C++ source code generated on : Sat Apr 19 16:28:10 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -20,7 +20,6 @@
 
 #include "c02_SubAdc.h"
 #include "rtwtypes.h"
-#include <string.h>
 #include "look1_iflf_binlca.h"
 #include "L02_ADC_READ.h"
 #include "b01_OSnScheduler.h"
@@ -225,9 +224,6 @@ static S_C02MTRTS C02MTRTS =
 
 /* Block signals and states (default storage) */
 StrC02DW GvC02DW;
-
-/* External inputs (root inport signals with default storage) */
-StrC02ExtU GvC02U;
 static void Ftn_CalIvtTemp_Tnow_Init(void);
 static void Ftn_CalIvtTemp_Tnow(void);
 static void Ftn_CalIvtTemp_RIndex_Init(void);
@@ -503,9 +499,6 @@ void c02_SubAdc_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvC02DW, 0,
                   sizeof(StrC02DW));
-
-    /* external inputs */
-    (void)memset(&GvC02U, 0, sizeof(StrC02ExtU));
 
     /* external outputs */
     mSsens_sIvtTempLow = 0.0F;

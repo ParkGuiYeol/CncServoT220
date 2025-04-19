@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'j01_McuInit'.
  *
- * Model version                  : 7.616
+ * Model version                  : 7.618
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:37:10 2025
+ * C/C++ source code generated on : Sat Apr 19 16:33:19 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -52,24 +52,8 @@ typedef struct
 }
 StrJ01DW;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct
-{
-    real32_T bC01MADC_mMsens_sIc;      /* '<Root>/bC01MADC_mMsens_sIc' */
-    real32_T bC01MADC_mMsens_sAbsIa;   /* '<Root>/bC01MADC_mMsens_sAbsIa' */
-    real32_T bC01MADC_mMsens_sAbsIb;   /* '<Root>/bC01MADC_mMsens_sAbsIb' */
-    real32_T bC01MADC_mMsens_sAbsIc;   /* '<Root>/bC01MADC_mMsens_sAbsIc' */
-    real32_T bC01MADC_mMsens_sHVdcLow; /* '<Root>/bC01MADC_mMsens_sHVdcLow' */
-    real32_T bC01MADC_mMsens_sInvHVdcLow;
-                                      /* '<Root>/bC01MADC_mMsens_sInvHVdcLow' */
-}
-StrJ01ExtU;
-
 /* Block signals and states (default storage) */
 extern StrJ01DW GvJ01DW;
-
-/* External inputs (root inport signals with default storage) */
-extern StrJ01ExtU GvJ01U;
 
 /*
  * Exported Global Signals

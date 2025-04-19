@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e03_MtrCtrl_MtrCtrl'.
  *
- * Model version                  : 7.922
+ * Model version                  : 7.974
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Thu Apr 10 11:44:39 2025
+ * C/C++ source code generated on : Sat Apr 19 16:30:25 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -21,7 +21,6 @@
 #include "e03_MtrCtrl_MtrCtrl.h"
 #include "rtwtypes.h"
 #include <math.h>
-#include <string.h>
 #include "h01_MdeMgmt.h"
 #include "d01_Diaglnteg.h"
 #include "b01_OSnScheduler.h"
@@ -59,9 +58,9 @@ static S_E03CCTRL E03CCTRL =
     0.0F,
     0U
 } ;                                    /* Referenced by:
-                                        * '<S34>/CB_E03CCTRL_sLq'
-                                        * '<S35>/CB_E03CCTRL_sKe'
-                                        * '<S35>/CB_E03CCTRL_sLd'
+                                        * '<S35>/CB_E03CCTRL_sLq'
+                                        * '<S36>/CB_E03CCTRL_sKe'
+                                        * '<S36>/CB_E03CCTRL_sLd'
                                         */
 
 static S_E03INIT E03INIT =
@@ -78,12 +77,11 @@ static S_E03INIT E03INIT =
 } ;                                    /* Referenced by:
                                         * '<S12>/UnitDelay1'
                                         * '<S14>/UnitDelay1'
-                                        * '<S34>/UnitDelay'
                                         * '<S35>/UnitDelay'
+                                        * '<S36>/UnitDelay'
                                         * '<S29>/UnitDelay_sIsRefIn'
-                                        * '<S40>/UnitDelay1'
-                                        * '<S46>/UnitDelay1'
-                                        * '<S50>/UnitDelay_sIsRefIn'
+                                        * '<S47>/UnitDelay1'
+                                        * '<S52>/UnitDelay_sIsRefIn'
                                         */
 
 static S_E03LIM E03LIM =
@@ -96,20 +94,20 @@ static S_E03LIM E03LIM =
     -5.73F,
     2000.0F,
     -2000.0F,
-    2000.0F,
     0U
 } ;                                    /* Referenced by:
-                                        * '<S34>/Saturation'
-                                        * '<S34>/Saturation1'
                                         * '<S35>/Saturation'
                                         * '<S35>/Saturation1'
+                                        * '<S36>/Saturation'
+                                        * '<S36>/Saturation1'
                                         * '<S27>/CB_E03LIM_sCurrLim'
-                                        * '<S40>/Saturation1'
-                                        * '<S40>/Saturation2'
-                                        * '<S46>/Saturation1'
-                                        * '<S46>/Saturation2'
-                                        * '<S51>/Saturation'
-                                        * '<S48>/CB_E03LIM_sSpdLimOfNor'
+                                        * '<S41>/Saturation1'
+                                        * '<S41>/Saturation2'
+                                        * '<S41>/Saturation3'
+                                        * '<S41>/Saturation5'
+                                        * '<S47>/Saturation1'
+                                        * '<S47>/Saturation2'
+                                        * '<S53>/Saturation'
                                         */
 
 static S_E03MCMV E03MCMV =
@@ -141,13 +139,13 @@ static S_E03MCMV E03MCMV =
                                         * '<S18>/CB_E03MCMV_sAlignCurr'
                                         * '<S18>/CB_E03MCMV_sAlignDeg'
                                         * '<S25>/Constant'
-                                        * '<S32>/CB_E03MCMV_sIfCurr'
-                                        * '<S32>/CB_E03MCMV_sIfSetFreq'
-                                        * '<S32>/CB_E03MCMV_sIfTsec'
-                                        * '<S32>/UnitDelay'
+                                        * '<S33>/CB_E03MCMV_sIfCurr'
+                                        * '<S33>/CB_E03MCMV_sIfSetFreq'
+                                        * '<S33>/CB_E03MCMV_sIfTsec'
+                                        * '<S33>/UnitDelay'
                                         * '<S26>/CB_sBetaRiseStep'
                                         * '<S26>/CB_sMaxFreq'
-                                        * '<S51>/Gain'
+                                        * '<S53>/Gain'
                                         */
 
 static S_E03MTRSWF E03MTRSWF =
@@ -164,9 +162,6 @@ static S_E03MTRSWF E03MTRSWF =
 
 /* Block signals and states (default storage) */
 StrE03DW GvE03DW;
-
-/* External inputs (root inport signals with default storage) */
-StrE03ExtU GvE03U;
 static void Ftn_LpfVdqeRef(void);
 static void Ftn_SelectionCtrlMde_Init(void);
 static void Ftn_SelectionCtrlMde(void);
@@ -191,7 +186,6 @@ static void Ftn_SpdCtrl(void);
 static void Ftn_SoftSpdMde(void);
 static void Ftn_MtrMdeCmSpSpdCtrl_Init(void);
 static void Ftn_MtrMdeCmSpSpdCtrl(void);
-static void Ftn_PstCtrl_Init(void);
 static void Ftn_PstCtrl(void);
 static void Ftn_TqSpdPstCtrl_Init(void);
 static void Ftn_TqSpdPstCtrl(void);
@@ -355,46 +349,51 @@ static void Ftn_MtrCtrlMdeAlignCtrl(void)
 /* System initialize for atomic system: '<S7>/Ftn_CurrRefSelection' */
 static void Ftn_CurrRefSelection_Init(void)
 {
-    GvE03DW.sIsRefIn2_cw5o = E03INIT.sIsRefInZ;
+    GvE03DW.sIsRefIn2 = (real_T)E03INIT.sIsRefInZ;
     GvE03DW.sIFreqBetaCmd = 0.0F;
 }
 
 /* Output and update for atomic system: '<S7>/Ftn_CurrRefSelection' */
 static void Ftn_CurrRefSelection(void)
 {
-    real32_T rtb_sBaudMin;
-    real32_T rtb_sBudMax2;
-    if (mCTRL_sIsRef < E03LIM.sCurrLim)
+    real_T rtb_sBaudMin;
+    real_T rtb_sBudMax2;
+    real32_T temp1;
+    if (mCTRL_sIsRef > E03LIM.sCurrLim)
     {
-        rtb_sBaudMin = mCTRL_sIsRef;
+        rtb_sBaudMin = (real_T)E03LIM.sCurrLim;
+    }
+    else if (mCTRL_sIsRef < (-E03LIM.sCurrLim))
+    {
+        rtb_sBaudMin = (real_T)((real32_T)(-E03LIM.sCurrLim));
     }
     else
     {
-        rtb_sBaudMin = E03LIM.sCurrLim;
+        rtb_sBaudMin = (real_T)mCTRL_sIsRef;
     }
 
     if (((int32_T)E03MCMV.uSoftMdeCurr) == 2L)
     {
-        rtb_sBudMax2 = (mBSW_sTime * mMCVG_sCurrSlpRising) +
-            GvE03DW.sIsRefIn2_cw5o;
+        rtb_sBudMax2 = ((real_T)((real32_T)(mBSW_sTime * mMCVG_sCurrSlpRising)))
+            + GvE03DW.sIsRefIn2;
         if (rtb_sBaudMin < rtb_sBudMax2)
         {
             rtb_sBudMax2 = rtb_sBaudMin;
         }
 
-        rtb_sBaudMin = GvE03DW.sIsRefIn2_cw5o - (mBSW_sTime *
-            mMCVG_sCurrSlpFalling);
+        rtb_sBaudMin = GvE03DW.sIsRefIn2 - ((real_T)((real32_T)(mBSW_sTime *
+            mMCVG_sCurrSlpFalling)));
         if (rtb_sBudMax2 > rtb_sBaudMin)
         {
             rtb_sBaudMin = rtb_sBudMax2;
         }
 
-        GvE03DW.sIsRefIn2_cw5o = rtb_sBaudMin;
+        GvE03DW.sIsRefIn2 = rtb_sBaudMin;
     }
 
     if (GvE03DW.uAppCtrlMde == 256U)
     {
-        rtb_sBudMax2 = (GvE03DW.sIFreqBetaCmd + 90.0F) * 0.0174532924F;
+        temp1 = (GvE03DW.sIFreqBetaCmd + 90.0F) * 0.0174532924F;
         GvE03DW.sIFreqBetaCmd += E03MCMV.sBetaRiseStep;
         if (GvE03DW.sIFreqBetaCmd >= E03MCMV.sMaxFreq)
         {
@@ -410,16 +409,16 @@ static void Ftn_CurrRefSelection(void)
         GvE03DW.sIFreqBetaCmd = 0.0F;
         if (GvE03DW.uAppCtrlMde == 64U)
         {
-            rtb_sBudMax2 = 1.57079637F;
+            temp1 = 1.57079637F;
         }
         else
         {
-            rtb_sBudMax2 = (mCRX_sFreqBetaCmd + 90.0F) * 0.0174532924F;
+            temp1 = (mCRX_sFreqBetaCmd + 90.0F) * 0.0174532924F;
         }
     }
 
-    mCTRL_sIdeRef = rtb_sBaudMin * cosf(rtb_sBudMax2);
-    mCTRL_sIqeRef = rtb_sBaudMin * sinf(rtb_sBudMax2);
+    mCTRL_sIdeRef = (real32_T)((real_T)(rtb_sBaudMin * ((real_T)cosf(temp1))));
+    mCTRL_sIqeRef = (real32_T)((real_T)(rtb_sBaudMin * ((real_T)sinf(temp1))));
     mCTRL_sIde = GvE03DW.sIde;
     mCTRL_sIqe = GvE03DW.sIqe;
     GvE03DW.sTheta = GvE03DW.sAppTheta;
@@ -537,15 +536,15 @@ static void Ftn_MtrMdeCmCurrCtrl(void)
     GvE03DW.aMerOutCCurrTheta[3] = mMTPST_sTheta;
 }
 
-/* System initialize for action system: '<S38>/Ftn_SpdCtrl' */
+/* System initialize for action system: '<S39>/Ftn_SpdCtrl' */
 static void Ftn_SpdCtrl_Init(void)
 {
-    GvE03DW.sTqRef_IntegZ_czro = E03INIT.sTqRefInit;
+    GvE03DW.sTqRef_IntegZ = E03INIT.sTqRefInit;
 }
 
 /*
- * Output and update for action system: '<S38>/Ftn_SpdCtrl'
- * Block description for: '<S38>/Ftn_SpdCtrl'
+ * Output and update for action system: '<S39>/Ftn_SpdCtrl'
+ * Block description for: '<S39>/Ftn_SpdCtrl'
  *   /+ d-Axis Current Control +/
  */
 static void Ftn_SpdCtrl(void)
@@ -554,7 +553,7 @@ static void Ftn_SpdCtrl(void)
     real32_T rtb_sWm_err;
     rtb_sWm_err = (0.104719758F * mCTRL_sSpdRefIn) - mMTPST_sWm;
     rtb_sTqRef_IntegLimited = (((rtb_sWm_err - GvE03DW.sSpdAntiValZ) *
-        mMCVG_sSCG_Ki) * mBSW_sOutloopTime) + GvE03DW.sTqRef_IntegZ_czro;
+        mMCVG_sSCG_Ki) * mBSW_sOutloopTime) + GvE03DW.sTqRef_IntegZ;
     if (rtb_sTqRef_IntegLimited > E03LIM.sMaxTqSet)
     {
         rtb_sTqRef_IntegLimited = E03LIM.sMaxTqSet;
@@ -584,34 +583,39 @@ static void Ftn_SpdCtrl(void)
 
     GvE03DW.sSpdAntiValZ = mMCVG_sSCG_Ka * (rtb_sWm_err -
         GvE03DW.sSpdCtrlMdeTqRefLimited);
-    GvE03DW.sTqRef_IntegZ_czro = rtb_sTqRef_IntegLimited;
+    GvE03DW.sTqRef_IntegZ = rtb_sTqRef_IntegLimited;
 }
 
-/* Output and update for action system: '<S38>/Ftn_SoftSpdMde' */
+/* Output and update for action system: '<S39>/Ftn_SoftSpdMde' */
 static void Ftn_SoftSpdMde(void)
 {
+    real_T rtb_sSpdRefLimited;
+    real32_T rtb_sBaudMax1;
     real32_T rtb_sBaudMin;
-    real32_T rtb_sBudMax2;
-    if (GvE03DW.sSpdRef < E03LIM.sSpdLimOfNor)
+    if (GvE03DW.sSpdRef > mSMDE_sSpdLimit)
     {
-        GvE03DW.sSpdRefLimited = GvE03DW.sSpdRef;
+        rtb_sSpdRefLimited = (real_T)mSMDE_sSpdLimit;
+    }
+    else if (GvE03DW.sSpdRef < (-mSMDE_sSpdLimit))
+    {
+        rtb_sSpdRefLimited = (real_T)((real32_T)(-mSMDE_sSpdLimit));
     }
     else
     {
-        GvE03DW.sSpdRefLimited = E03LIM.sSpdLimOfNor;
+        rtb_sSpdRefLimited = (real_T)GvE03DW.sSpdRef;
     }
 
     rtb_sBaudMin = GvE03DW.Delay_DSTATE_fsbd;
-    rtb_sBudMax2 = (mBSW_sOutloopTime * mMCVG_sSpdSlpRising) + rtb_sBaudMin;
-    if (GvE03DW.sSpdRefLimited < rtb_sBudMax2)
+    rtb_sBaudMax1 = (mBSW_sOutloopTime * mMCVG_sSpdSlpRising) + rtb_sBaudMin;
+    if (rtb_sSpdRefLimited >= ((real_T)rtb_sBaudMax1))
     {
-        rtb_sBudMax2 = GvE03DW.sSpdRefLimited;
+        rtb_sSpdRefLimited = (real_T)rtb_sBaudMax1;
     }
 
     rtb_sBaudMin -= mBSW_sOutloopTime * mMCVG_sSpdSlpFalling;
-    if (rtb_sBudMax2 > rtb_sBaudMin)
+    if (rtb_sSpdRefLimited > ((real_T)rtb_sBaudMin))
     {
-        mCTRL_sSpdRefIn = rtb_sBudMax2;
+        mCTRL_sSpdRefIn = (real32_T)rtb_sSpdRefLimited;
     }
     else
     {
@@ -621,13 +625,13 @@ static void Ftn_SoftSpdMde(void)
     GvE03DW.Delay_DSTATE_fsbd = mCTRL_sSpdRefIn;
 }
 
-/* System initialize for action system: '<S37>/Ftn_MtrMdeCmSpSpdCtrl' */
+/* System initialize for action system: '<S38>/Ftn_MtrMdeCmSpSpdCtrl' */
 static void Ftn_MtrMdeCmSpSpdCtrl_Init(void)
 {
     Ftn_SpdCtrl_Init();
 }
 
-/* Output and update for action system: '<S37>/Ftn_MtrMdeCmSpSpdCtrl' */
+/* Output and update for action system: '<S38>/Ftn_MtrMdeCmSpSpdCtrl' */
 static void Ftn_MtrMdeCmSpSpdCtrl(void)
 {
     if (mSched_uFlagSpdCtrl == 1U)
@@ -646,63 +650,102 @@ static void Ftn_MtrMdeCmSpSpdCtrl(void)
     GvE03DW.TqRefLimited = GvE03DW.sSpdCtrlMdeTqRefLimited;
 }
 
-/* System initialize for action system: '<S37>/Ftn_PstCtrl' */
-static void Ftn_PstCtrl_Init(void)
-{
-    GvE03DW.sTqRef_IntegZ = E03INIT.sTqRefInit;
-}
-
-/* Output and update for action system: '<S37>/Ftn_PstCtrl' */
+/* Output and update for action system: '<S38>/Ftn_PstCtrl' */
 static void Ftn_PstCtrl(void)
 {
-    int64_T rtb_sPsterr;
-    real32_T rtb_sSpdRefUlimited2_jt3o;
-    real32_T rtb_sSpdRef_IntegLimited;
-    rtb_sPsterr = mSMDE_i64PstRef - mMTPST_i64TurretPst;
-    rtb_sSpdRef_IntegLimited = (mBSW_sTimePstCtrl * ((((real32_T)rtb_sPsterr) -
-        GvE03DW.Delay1_DSTATE) * mMCVG_sPCG_Ki)) + GvE03DW.sTqRef_IntegZ;
-    if (rtb_sSpdRef_IntegLimited > E03LIM.sMaxSpdSet)
+    real32_T rtb_sPstCtrlSpdRefUlimited3;
+    real32_T rtb_sPstKiCtrlRlt;
+    real32_T rtb_sPsterr;
+    real32_T u2;
+    real32_T u2_tmp;
+    int16_T tmp;
+    rtb_sPsterr = ((real32_T)((int64_T)(mSMDE_i64PstRef - mMTPST_i64TurretPst)))
+        * 0.0001F;
+    rtb_sPstKiCtrlRlt = (mBSW_sTimePstCtrl * ((rtb_sPsterr -
+                           GvE03DW.Delay1_DSTATE) * mMCVG_sPCG_Ki)) +
+        GvE03DW.Delay2_DSTATE;
+    rtb_sPstCtrlSpdRefUlimited3 = E03LIM.sNegMaxSpdSet * 0.05F;
+    u2 = E03LIM.sMaxSpdSet * 0.05F;
+    if (rtb_sPstKiCtrlRlt > u2)
     {
-        rtb_sSpdRef_IntegLimited = E03LIM.sMaxSpdSet;
+        rtb_sPstKiCtrlRlt = u2;
     }
-    else if (rtb_sSpdRef_IntegLimited < E03LIM.sNegMaxSpdSet)
+    else if (rtb_sPstKiCtrlRlt < rtb_sPstCtrlSpdRefUlimited3)
     {
-        rtb_sSpdRef_IntegLimited = E03LIM.sNegMaxSpdSet;
+        rtb_sPstKiCtrlRlt = rtb_sPstCtrlSpdRefUlimited3;
     }
     else
     {
         /* no actions */
     }
 
-    rtb_sSpdRefUlimited2_jt3o = ((rtb_sSpdRef_IntegLimited + (((real32_T)
-        rtb_sPsterr) * (mMCVG_sPCG_Kp * 0.001F))) + ((((real32_T)((int64_T)
-        (rtb_sPsterr - GvE03DW.Delay_DSTATE))) * mMCVG_sPCG_Kd) *
-        mBSW_sInvTimePstCtrl)) - ((mMTPST_sWm * mMTPST_sWm) * mMCVG_sPCG_Apst);
-    if (rtb_sSpdRefUlimited2_jt3o > E03LIM.sMaxSpdSet)
+    rtb_sPstCtrlSpdRefUlimited3 = rtb_sPsterr * mMCVG_sPCG_Kp;
+    u2 = E03LIM.sNegMaxSpdSet * 1.5F;
+    u2_tmp = E03LIM.sMaxSpdSet * 1.5F;
+    if (rtb_sPstCtrlSpdRefUlimited3 > u2_tmp)
+    {
+        GvE03DW.sPstKpCtrlRlt = u2_tmp;
+    }
+    else if (rtb_sPstCtrlSpdRefUlimited3 < u2)
+    {
+        GvE03DW.sPstKpCtrlRlt = u2;
+    }
+    else
+    {
+        GvE03DW.sPstKpCtrlRlt = rtb_sPstCtrlSpdRefUlimited3;
+    }
+
+    rtb_sPstCtrlSpdRefUlimited3 = ((rtb_sPsterr - GvE03DW.Delay_DSTATE) *
+        mMCVG_sPCG_Kd) * mBSW_sInvTimePstCtrl;
+    if (rtb_sPstCtrlSpdRefUlimited3 > u2_tmp)
+    {
+        GvE03DW.sPstKdCtrlRlt = u2_tmp;
+    }
+    else if (rtb_sPstCtrlSpdRefUlimited3 < u2)
+    {
+        GvE03DW.sPstKdCtrlRlt = u2;
+    }
+    else
+    {
+        GvE03DW.sPstKdCtrlRlt = rtb_sPstCtrlSpdRefUlimited3;
+    }
+
+    if (mMTPST_sWm < 0.0F)
+    {
+        tmp = -1;
+    }
+    else
+    {
+        tmp = (mMTPST_sWm > 0.0F) ? ((int16_T)1) : ((int16_T)0);
+    }
+
+    rtb_sPstCtrlSpdRefUlimited3 = ((rtb_sPstKiCtrlRlt + GvE03DW.sPstKpCtrlRlt) +
+        GvE03DW.sPstKdCtrlRlt) - (((mMTPST_sWm * mMTPST_sWm) * ((real32_T)tmp)) *
+        mMCVG_sPCG_Apst);
+    if (rtb_sPstCtrlSpdRefUlimited3 > E03LIM.sMaxSpdSet)
     {
         GvE03DW.sSpdRefPstMde = E03LIM.sMaxSpdSet;
     }
-    else if (rtb_sSpdRefUlimited2_jt3o < E03LIM.sNegMaxSpdSet)
+    else if (rtb_sPstCtrlSpdRefUlimited3 < E03LIM.sNegMaxSpdSet)
     {
         GvE03DW.sSpdRefPstMde = E03LIM.sNegMaxSpdSet;
     }
     else
     {
-        GvE03DW.sSpdRefPstMde = rtb_sSpdRefUlimited2_jt3o;
+        GvE03DW.sSpdRefPstMde = rtb_sPstCtrlSpdRefUlimited3;
     }
 
     GvE03DW.sSpdRef = GvE03DW.sSpdRefPstMde;
-    GvE03DW.Delay1_DSTATE = mMCVG_sPCG_Ka * (rtb_sSpdRefUlimited2_jt3o -
+    GvE03DW.Delay1_DSTATE = mMCVG_sPCG_Ka * (rtb_sPstCtrlSpdRefUlimited3 -
         GvE03DW.sSpdRefPstMde);
-    GvE03DW.sTqRef_IntegZ = rtb_sSpdRef_IntegLimited;
+    GvE03DW.Delay2_DSTATE = rtb_sPstKiCtrlRlt;
     GvE03DW.Delay_DSTATE = rtb_sPsterr;
 }
 
 /* System initialize for atomic system: '<S23>/Ftn_TqSpdPstCtrl' */
 static void Ftn_TqSpdPstCtrl_Init(void)
 {
-    GvE03DW.sIsRefIn2 = E03INIT.sIsRefInZ;
-    Ftn_PstCtrl_Init();
+    GvE03DW.sIsRefIn2_hdgx = E03INIT.sIsRefInZ;
     GvE03DW.sSpdRef = 0.0F;
     Ftn_MtrMdeCmSpSpdCtrl_Init();
 }
@@ -734,13 +777,13 @@ static void Ftn_TqSpdPstCtrl(void)
         GvE03DW.TqRefLimited = mCRX_sVltCurrTqCmd;
     }
 
-    rtb_Saturation = (mBSW_sTime * mMCVG_sTqSlpRising) + GvE03DW.sIsRefIn2;
+    rtb_Saturation = (mBSW_sTime * mMCVG_sTqSlpRising) + GvE03DW.sIsRefIn2_hdgx;
     if (GvE03DW.TqRefLimited < rtb_Saturation)
     {
         rtb_Saturation = GvE03DW.TqRefLimited;
     }
 
-    rtb_sBaudMin = GvE03DW.sIsRefIn2 - (mBSW_sTime * mMCVG_sTqSlpFalling);
+    rtb_sBaudMin = GvE03DW.sIsRefIn2_hdgx - (mBSW_sTime * mMCVG_sTqSlpFalling);
     if (rtb_Saturation > rtb_sBaudMin)
     {
         mCTRL_sTqRefIn = rtb_Saturation;
@@ -767,7 +810,7 @@ static void Ftn_TqSpdPstCtrl(void)
     GvE03DW.aMerOutCCurrTheta[1] = mMTPST_sIde;
     GvE03DW.aMerOutCCurrTheta[2] = mMTPST_sIqe;
     GvE03DW.aMerOutCCurrTheta[3] = mMTPST_sTheta;
-    GvE03DW.sIsRefIn2 = mCTRL_sTqRefIn;
+    GvE03DW.sIsRefIn2_hdgx = mCTRL_sTqRefIn;
 }
 
 /* Output and update for action system: '<S7>/Ftn_MtrMdeCmCurrAlignCtrl' */
@@ -955,9 +998,6 @@ void e03_MtrCtrl_MtrCtrl_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvE03DW, 0,
                   sizeof(StrE03DW));
-
-    /* external inputs */
-    (void)memset(&GvE03U, 0, sizeof(StrE03ExtU));
 
     /* external outputs */
     mCTRL_sIsRef = 0.0F;

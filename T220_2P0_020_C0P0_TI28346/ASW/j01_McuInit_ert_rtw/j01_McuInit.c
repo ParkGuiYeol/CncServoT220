@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'j01_McuInit'.
  *
- * Model version                  : 7.616
+ * Model version                  : 7.618
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Mar 29 20:37:10 2025
+ * C/C++ source code generated on : Sat Apr 19 16:33:19 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -20,7 +20,6 @@
 
 #include "j01_McuInit.h"
 #include "rtwtypes.h"
-#include <string.h>
 #include "c01_MainAdc.h"
 
 /* Exported block signals */
@@ -47,9 +46,6 @@ static S_J01MINIT J01MINIT =
 
 /* Block signals and states (default storage) */
 StrJ01DW GvJ01DW;
-
-/* External inputs (root inport signals with default storage) */
-StrJ01ExtU GvJ01U;
 
 /* Model step function */
 void j01_McuInit_step(void)
@@ -106,9 +102,6 @@ void j01_McuInit_initialize(void)
     /* states (dwork) */
     (void) memset((void *) &GvJ01DW, 0,
                   sizeof(StrJ01DW));
-
-    /* external inputs */
-    (void)memset(&GvJ01U, 0, sizeof(StrJ01ExtU));
 
     /* external outputs */
     mMinit_sCurrOfsIa = 0.0F;

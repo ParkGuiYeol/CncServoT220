@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e02_MtrCtrl_Pst'.
  *
- * Model version                  : 7.576
+ * Model version                  : 7.581
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 12 01:09:17 2025
+ * C/C++ source code generated on : Sat Apr 19 16:29:46 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -21,7 +21,6 @@
 #include "e02_MtrCtrl_Pst.h"
 #include "rtwtypes.h"
 #include <math.h>
-#include <string.h>
 #include "c01_MainAdc.h"
 #include "d01_Diaglnteg.h"
 #include "b01_OSnScheduler.h"
@@ -97,14 +96,10 @@ static S_E02SWF E02SWF =
 
 /* Block signals and states (default storage) */
 StrE02DW GvE02DW;
-
-/* External inputs (root inport signals with default storage) */
-StrE02ExtU GvE02U;
 static void Ftn_RevAbc2dqe_Init(void);
 static void Ftn_RevAbc2dqe(void);
 static void Ftn_RevCurrDlyCmpsn(void);
 static void Ftn_CalMdata_Init(void);
-static void Ftn_CalMdata_Update(void);
 static void Ftn_CalMdata(void);
 static void Ftn_SpdMtMethod_Init(void);
 static void Ftn_SpdMtMethod(void);
@@ -169,14 +164,11 @@ static void Ftn_CalMdata_Init(void)
     GvE02DW.i16Mdata = 0;
 }
 
-/* Outputs for atomic system: '<S3>/Ftn_CalMdata' */
+/* Output and update for atomic system: '<S3>/Ftn_CalMdata' */
 static void Ftn_CalMdata(void)
 {
-    real32_T rtb_sSpdNowZ;
     int16_T tmp;
-    rtb_sSpdNowZ = GvE02DW.Delay_DSTATE;
-    if ((GvE02DW.i16DiffPostion > E02PST.i16AllowedCntMin) && (rtb_sSpdNowZ <
-            0.0F))
+    if (GvE02DW.i16DiffPostion > E02PST.i16AllowedCntMin)
     {
         if ((GvE02DW.i16DiffPostion >= 0) && (E02PST.i16EncElectMaxCnt <
                 (GvE02DW.i16DiffPostion - MAX_int16_T)))
@@ -204,7 +196,7 @@ static void Ftn_CalMdata(void)
             tmp = -E02PST.i16AllowedCntMin;
         }
 
-        if ((GvE02DW.i16DiffPostion < tmp) && (rtb_sSpdNowZ > 0.0F))
+        if (GvE02DW.i16DiffPostion < tmp)
         {
             if ((GvE02DW.i16DiffPostion < 0) && (E02PST.i16EncElectMaxCnt <
                     (MIN_int16_T - GvE02DW.i16DiffPostion)))
@@ -229,12 +221,6 @@ static void Ftn_CalMdata(void)
     }
 }
 
-/* Update for atomic system: '<S3>/Ftn_CalMdata' */
-static void Ftn_CalMdata_Update(void)
-{
-    GvE02DW.Delay_DSTATE = GvE02DW.sEncThetaCurrTdc;
-}
-
 /* System initialize for atomic system: '<Root>/Ftn_SpdMtMethod' */
 static void Ftn_SpdMtMethod_Init(void)
 {
@@ -244,6 +230,7 @@ static void Ftn_SpdMtMethod_Init(void)
 /* Output and update for atomic system: '<Root>/Ftn_SpdMtMethod' */
 static void Ftn_SpdMtMethod(void)
 {
+    real32_T rtb_sSpdNow;
     real32_T rtb_sThetaIntegIn;
     real32_T rtb_sWe;
     real32_T rtb_sWm;
@@ -268,9 +255,9 @@ static void Ftn_SpdMtMethod(void)
     rtb_sWm = rtb_sWe * E02PST.sInvPolePairs;
     mMTPST_sWm = ((GvE02DW.sLpfNowZ_mxvj + rtb_sWm) * E02SWF.sEstWmLb) +
         (GvE02DW.sLpfLowZ_g0jt * E02SWF.sEstWmLa);
-    GvE02DW.sEncThetaCurrTdc = rtb_sWm * 9.54929638F;
-    mMTPST_sRpm = ((GvE02DW.sLpfNowZ_oyf4 + GvE02DW.sEncThetaCurrTdc) *
-                   E02SWF.sEstSpdLb) + (GvE02DW.sLpfLowZ_nv33 * E02SWF.sEstSpdLa);
+    rtb_sSpdNow = rtb_sWm * 9.54929638F;
+    mMTPST_sRpm = ((GvE02DW.sLpfNowZ_oyf4 + rtb_sSpdNow) * E02SWF.sEstSpdLb) +
+        (GvE02DW.sLpfLowZ_nv33 * E02SWF.sEstSpdLa);
     rtb_sThetaIntegIn = (((real32_T)GvE02DW.i16PstNow) * E02PST.sPI2InvPPR) -
         E02PST.sThetaOffset;
     if (rtb_sThetaIntegIn < 0.0F)
@@ -288,12 +275,11 @@ static void Ftn_SpdMtMethod(void)
     }
 
     GvE02DW.i32PstZ = GvE02DW.i16PstNow;
-    Ftn_CalMdata_Update();
     GvE02DW.sLpfNowZ = rtb_sWe;
     GvE02DW.sLpfLowZ = mMTPST_sWe;
     GvE02DW.sLpfNowZ_mxvj = rtb_sWm;
     GvE02DW.sLpfLowZ_g0jt = mMTPST_sWm;
-    GvE02DW.sLpfNowZ_oyf4 = GvE02DW.sEncThetaCurrTdc;
+    GvE02DW.sLpfNowZ_oyf4 = rtb_sSpdNow;
     GvE02DW.sLpfLowZ_nv33 = mMTPST_sRpm;
 }
 
@@ -343,9 +329,6 @@ void e02_MtrCtrl_Pst_initialize(void)
     /* states (dwork) */
     (void) memset((void *)&GvE02DW, 0,
                   sizeof(StrE02DW));
-
-    /* external inputs */
-    (void)memset(&GvE02U, 0, sizeof(StrE02ExtU));
 
     /* external outputs */
     mMTPST_sWm = 0.0F;
