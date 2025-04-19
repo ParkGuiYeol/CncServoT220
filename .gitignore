@@ -9,7 +9,7 @@
 !**/Codegen/.gitkeep
 
 # Debug 폴더 무시
-**/Debug/
+# **/Debug/
 
 # 사용자 설정 및 메타데이터 무시
 #.jxbrowser.userdata/
