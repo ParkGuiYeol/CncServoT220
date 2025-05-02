@@ -44,6 +44,11 @@ void DAC_Out(void)
             DACS.Sel = 0U;
             break;
 
+        case 2:
+
+            DACS.Sel = 0U;
+            break;
+
         default:
 			break;
 	}

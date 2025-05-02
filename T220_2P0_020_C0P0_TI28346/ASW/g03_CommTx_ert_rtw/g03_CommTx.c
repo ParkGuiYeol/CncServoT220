@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'g03_CommTx'.
  *
- * Model version                  : 7.370
+ * Model version                  : 7.371
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 17:42:21 2025
+ * C/C++ source code generated on : Sun May 11 18:59:13 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -203,6 +203,9 @@ void g03_CommTx_initialize(void)
     mCTX_u32DataLowTx2 = 0UL;
     mCTX_u32DataHighTx2 = 0UL;
     Ftn_CommDataParsingTx1_Init();
+
+    /* user code (Initialize function Body) */
+    mM2Int_SwRev = CTX3.uSW_REV;
 }
 
 /*

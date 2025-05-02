@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e02_MtrCtrl_Pst'.
  *
- * Model version                  : 7.581
+ * Model version                  : 7.582
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:29:46 2025
+ * C/C++ source code generated on : Thu May 22 22:08:16 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -287,7 +287,7 @@ static void Ftn_SpdMtMethod(void)
 void e02_MtrCtrl_Pst_step(void)
 {
     uint32_T qY;
-    if (mEnc_uEND == 35U)
+    if (mEnc_uEND == 17U)
     {
         GvE02DW.u32EncSingleTurn = ((uint32_T)((uint16_T)((mEnc_uABS0 & 255U) |
             ((mEnc_uABS1 & 255U) << 8U)))) | (((uint32_T)((uint16_T)(mEnc_uABS2

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e03_MtrCtrl_MtrCtrl'.
  *
- * Model version                  : 7.974
+ * Model version                  : 7.978
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:30:25 2025
+ * C/C++ source code generated on : Sun May 25 16:23:28 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -165,6 +165,7 @@ typedef struct
     real32_T sIqs_pe32;                /* '<S18>/Gain2' */
     real32_T sIdqSinTheta;             /* '<S18>/TrigonometricFunction' */
     real32_T sSpdRef;                  /* '<S38>/Merge1' */
+    real32_T TqRefLimited;             /* '<S38>/Merge' */
     real32_T sPstKpCtrlRlt;            /* '<S41>/Saturation5' */
     real32_T sPstKdCtrlRlt;            /* '<S41>/Saturation3' */
     real32_T sSpdRefPstMde;            /* '<S41>/Saturation1' */
@@ -182,7 +183,6 @@ typedef struct
     real32_T sVVqeRef;                 /* '<S12>/Switch2' */
     real32_T sVfThetaRef;              /* '<S15>/Chart_MtrCtrlMdeVFCtrl' */
     real32_T sVfVqeRef;                /* '<S14>/Switch2' */
-    real32_T TqRefLimited;             /* '<S38>/Merge' */
     real32_T sIfThetaZ;                /* '<S33>/UnitDelay' */
     real32_T sIsRefIn2_hdgx;           /* '<S52>/UnitDelay_sIsRefIn' */
     real32_T Delay1_DSTATE;            /* '<S41>/Delay1' */

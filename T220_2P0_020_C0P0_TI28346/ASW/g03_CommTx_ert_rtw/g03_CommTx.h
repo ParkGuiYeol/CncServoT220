@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'g03_CommTx'.
  *
- * Model version                  : 7.370
+ * Model version                  : 7.371
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 17:42:21 2025
+ * C/C++ source code generated on : Sun May 11 18:59:13 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc

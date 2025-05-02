@@ -73,15 +73,56 @@ extern "C" {
 //#define LED_SERVO_ON_OFF          GpioDataRegs.GPBSET.bit.GPIO35 = 1
 //#define LED_SERVO_ON_ON           GpioDataRegs.GPBCLEAR.bit.GPIO35 = 1
 
-//#define LED_E_STOP_OFF                    GpioDataRegs.GPBSET.bit.GPIO37 = 1
-//#define LED_E_STOP_ON                     GpioDataRegs.GPBCLEAR.bit.GPIO37 = 1
+//#define LED_E_STOP_OFF            GpioDataRegs.GPBSET.bit.GPIO37 = 1
+//#define LED_E_STOP_ON             GpioDataRegs.GPBCLEAR.bit.GPIO37 = 1
 
 ///// DC RELAY /////
-//#define DC_RELAY_ON                       GpioDataRegs.GPASET.bit.GPIO30 = 1
-//#define DC_RELAY_OFF                      GpioDataRegs.GPACLEAR.bit.GPIO30 = 1
+//#define DC_RELAY_ON               GpioDataRegs.GPASET.bit.GPIO30 = 1
+//#define DC_RELAY_OFF              GpioDataRegs.GPACLEAR.bit.GPIO30 = 1
 
 ///// E-STOP SWITHC /////
-//#define E_STOP_SWITCH                     GpioDataRegs.GPADAT.bit.GPIO25
+//#define E_STOP_SWITCH             GpioDataRegs.GPADAT.bit.GPIO25
+
+//******************************************************************************** FND SCAN
+#define FNDS0_OF                    GpioDataRegs.GPASET.bit.GPIO7 = 1
+#define FNDS0_ON                    GpioDataRegs.GPACLEAR.bit.GPIO7 = 1
+
+#define FNDS1_OF                    GpioDataRegs.GPASET.bit.GPIO8 = 1
+#define FNDS1_ON                    GpioDataRegs.GPACLEAR.bit.GPIO8 = 1
+
+#define FNDS2_OF                    GpioDataRegs.GPBSET.bit.GPIO34 = 1
+#define FNDS2_ON                    GpioDataRegs.GPBCLEAR.bit.GPIO34 = 1
+
+#define FNDS3_OF                    GpioDataRegs.GPBSET.bit.GPIO35 = 1
+#define FNDS3_ON                    GpioDataRegs.GPBCLEAR.bit.GPIO35 = 1
+
+#define FNDS4_OF                    GpioDataRegs.GPBSET.bit.GPIO37 = 1
+#define FNDS4_ON                    GpioDataRegs.GPBCLEAR.bit.GPIO37 = 1
+
+//******************************************************************************** FND DATA
+#define FNDD0_ON                    GpioDataRegs.GPBSET.bit.GPIO56 = 1
+#define FNDD0_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO56 = 1
+
+#define FNDD1_ON                    GpioDataRegs.GPBSET.bit.GPIO57 = 1
+#define FNDD1_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO57 = 1
+
+#define FNDD2_ON                    GpioDataRegs.GPBSET.bit.GPIO58 = 1
+#define FNDD2_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO58 = 1
+
+#define FNDD3_ON                    GpioDataRegs.GPBSET.bit.GPIO59 = 1
+#define FNDD3_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO59 = 1
+
+#define FNDD4_ON                    GpioDataRegs.GPBSET.bit.GPIO60 = 1
+#define FNDD4_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO60 = 1
+
+#define FNDD5_ON                    GpioDataRegs.GPBSET.bit.GPIO61 = 1
+#define FNDD5_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO61 = 1
+
+#define FNDD6_ON                    GpioDataRegs.GPBSET.bit.GPIO62 = 1
+#define FNDD6_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO62 = 1
+
+#define FNDD7_ON                    GpioDataRegs.GPBSET.bit.GPIO63 = 1
+#define FNDD7_OF                    GpioDataRegs.GPBCLEAR.bit.GPIO63 = 1
 
 #ifdef __cplusplus
 }

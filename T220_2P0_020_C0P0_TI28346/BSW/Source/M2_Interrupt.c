@@ -12,9 +12,10 @@
 
 /* Definition for custom storage class: FileScope */
 uint16_T uFlagDigInDebZ = 0U, uFlagDigInDeb = 0U;
+uint16_T mM2Int_SwRev = 0U;
 int32_T i32CntDigtInDeb = 0;
 int32_T i32DigtInDebCntSet = 0;
-uint16_T mBSW_uEstpSwitchDtc = 0U;
+//uint16_T mBSW_uEstpSwitchDtc = 0U;
 uint16_T mBSW_a11uReadInput[11] = {0U};
 uint16_T mBSW_uExinputAll = 0U;
 S_EXINPUT uEXINPUT = {0U}, uEXINPUT_Z = {0U};
@@ -37,6 +38,9 @@ interrupt void M2_Interrupt(void)
 
     // External Digital Input
     ExDigInput();
+
+    // ATC Operation
+    h01_MdeMgmt_step();
 
     // Digital Output Allocation
     DigitalOutSet();
@@ -124,7 +128,7 @@ void ExDigInput(void)
         mBSW_a11uReadInput[9] = uEXINPUT.bit.uNJog;
         mBSW_a11uReadInput[10] = uEXINPUT.bit.uEnMpg;
 
-        mBSW_uEstpSwitchDtc = uEXINPUT.bit.uEmg;
+//        mBSW_uEstpSwitchDtc = uEXINPUT.bit.uEmg;
     }
 
     uFlagDigInDebZ = uFlagDigInDeb;

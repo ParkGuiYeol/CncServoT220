@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'h01_MdeMgmt'.
  *
- * Model version                  : 3.570
+ * Model version                  : 3.576
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 17:45:23 2025
+ * C/C++ source code generated on : Sun May 25 16:22:38 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -20,6 +20,7 @@
 
 #include "h01_MdeMgmt.h"
 #include "rtwtypes.h"
+#include <string.h>
 #include "d01_Diaglnteg.h"
 #include "e02_MtrCtrl_Pst.h"
 #include "f01_CommRx1.h"
@@ -77,7 +78,6 @@ real32_T mSMDE_sAngleErrDisp;        /* '<Root>/bH01SMDE_mSMDE_sAngleErrDisp' */
 real32_T mSMDE_sRefAngle;              /* '<Root>/bH01SMDE_mSMDE_sRefAngle' */
 real32_T mSMDE_sActAngle;              /* '<Root>/bH01SMDE_mSMDE_sActAngle' */
 real32_T mSMDE_sAngleErr;              /* '<Root>/bH01SMDE_mSMDE_sAngleErr' */
-uint16_T mSMDE_uOrgNotDef;             /* '<Root>/bH01SMDE_mSMDE_uOrgNotDef' */
 
 /* Exported data definition */
 
@@ -160,7 +160,8 @@ static void Ftn_Wait(void)
     if (((real32_T)GvH01DW.i32CntSenless) >= H01MDE.i32CntSetRdyRestart)
     {
         GvH01DW.i32CntSenless = (int32_T)H01MDE.i32CntSetRdyRestart;
-        GvH01DW.mSMDE_uFlagRestart = Cnst_u16True;
+
+        /*  mSMDE_uFlagRestart = Cnst_u16True; */
     }
     else
     {
@@ -661,7 +662,6 @@ static void Ftn_OriginDogin(void)
     GvH01DW.uFlagResetEncZ = mI2c_uFlagResetEnc;
     GvH01DW.uFlagSaveEncOriginZ = mI2c_uFlagSaveEncOrigin;
     mSMDE_i64PstRef = mMTPST_i64TurretPst;
-    mSMDE_uOrgNotDef = GvH01Y.bH01SMDE_mSMDE_uExOut.uOrgNotDef;
 }
 
 /* Model step function */
@@ -849,11 +849,54 @@ void h01_MdeMgmt_initialize(void)
     (void) memset((void *)&GvH01DW, 0,
                   sizeof(StrH01DW));
 
+    /* external outputs */
+    (void)memset(&GvH01Y, 0, sizeof(StrH01ExtY));
+    mSMDE_uFlagInverterOut = 0U;
+    mSMDE_sSpdRefInSeqOut = 0.0F;
+    mSMDE_sSpdLimit = 0.0F;
+    mSMDE_sSpdRef = 0.0F;
+    mSMDE_sIfFreqSeqOut = 0.0F;
+    mSMDE_uMtrCtrlMde = 0U;
+    mSMDE_uOprState = 0U;
+    mSMDE_uFlagSaveEncOrigin = 0U;
+    mSMDE_uFlagResetEnc = 0U;
+    mSMDE_i64PstOrigin = 0LL;
+    mSMDE_i64PstRef = 0LL;
+    mSMDE_sRefAngleDisp = 0.0F;
+    mSMDE_sActAngleDisp = 0.0F;
+    mSMDE_sAngleErrDisp = 0.0F;
+    mSMDE_sRefAngle = 0.0F;
+    mSMDE_sActAngle = 0.0F;
+    mSMDE_sAngleErr = 0.0F;
+
     /* user code (Initialize function Body) */
 
     /* MISRA-C Dummy Code */
     // H01STMDE.uDummy = 0U;
+    mSMDE_uFlagInverterOut = 0U;
+    mSMDE_uMtrCtrlMde = 0U;
+    mSMDE_sSpdRef = 0.0F;
+    mSMDE_sSpdLimit = 0.0F;
+    mSMDE_sSpdRefInSeqOut = 0.0F;
+    mSMDE_sIfFreqSeqOut = 0.0F;
+    mSMDE_uOprState = 0U;
+    mSMDE_uFlagSaveEncOrigin = 0U;
+    mSMDE_uFlagResetEnc = 0U;
     mSMDE_i64PstOrigin = 4294180863LL;
+    mSMDE_i64PstRef = 0LL;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uAlarm = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uStadby = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uBrake = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uOrgOut = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uInPst = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uActPst = 0U;
+    GvH01Y.bH01SMDE_mSMDE_uExOut.uOrgNotDef = 0U;
+    mSMDE_sRefAngle = 0.0F;
+    mSMDE_sActAngle = 0.0F;
+    mSMDE_sAngleErr = 0.0F;
+    mSMDE_sRefAngleDisp = 0.0F;
+    mSMDE_sActAngleDisp = 0.0F;
+    mSMDE_sAngleErrDisp = 0.0F;
     GvH01DW.mSMDE_uFlagRestart = 0U;
     GvH01DW.i32CntSenless = 0;
     GvH01DW.uDoginZ = 0U;
@@ -878,6 +921,8 @@ void h01_MdeMgmt_initialize(void)
         | (((int64)PD[POS_ORIGIN_3] & 0xFF) << 16)
         | (((int64)PD[POS_ORIGIN_2] & 0xFF) << 8)
         | ((int64)PD[POS_ORIGIN_1] & 0xFF);
+    GvH01Y.bH01SMDE_mSMDE_sPstRef = 0.0F;
+    GvH01Y.bH01SMDE_mSMDE_uOrgNotDef = 0U;
 }
 
 /*

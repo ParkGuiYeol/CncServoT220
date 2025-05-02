@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'd01_Diaglnteg'.
  *
- * Model version                  : 7.634
+ * Model version                  : 7.636
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:28:44 2025
+ * C/C++ source code generated on : Fri May  2 22:23:04 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -28,9 +28,9 @@
 #include <string.h>
 
 /* Includes for objects with custom storage classes */
-#include "M2_Interrupt.h"
 #include "b01_OSnScheduler.h"
 #include "M1_Interrupt.h"
+#include "f01_CommRx1.h"
 #include "e03_MtrCtrl_MtrCtrl.h"
 #include "e02_MtrCtrl_Pst.h"
 #include "j01_McuInit.h"

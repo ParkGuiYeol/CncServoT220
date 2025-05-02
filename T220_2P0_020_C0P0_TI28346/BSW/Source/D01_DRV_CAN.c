@@ -270,6 +270,8 @@ void Init_eCAN(void)
 // HCU CAN Communication
 interrupt void ISR_CAN_HostRx(void)
 {
+    mCRX1_uRxChSel = 1U;
+
     mCRX1_u32CrrDataLow = CAN_MB_HOST.MBOX0.MDL.all;
     mCRX1_u32CrrDataHigh = CAN_MB_HOST.MBOX0.MDH.all;
 
@@ -282,8 +284,6 @@ interrupt void ISR_CAN_HostRx(void)
 // WIA Monitoring CAN Communication
 interrupt void ISR_CAN_HostRx_Monitor(void)
 {
-    mCRX1_uRxChSel = 1U;
-
     if (CAN_MC_HOST.CANRMP.all & MB01)
     {
 //        mCRX1_u32CrrDataLow = CAN_MB_HOST.MBOX1.MDL.all;
@@ -345,59 +345,37 @@ void CAN_HostTx(uint32_T MBNum)
 
     switch (MBNum)
     {
-        case MB23:
-
-            CAN_MB_HOST.MBOX23.MDL.all = mCTX_u32DataLowTx1;
-            CAN_MB_HOST.MBOX23.MDH.all = mCTX_u32DataHighTx1;
-
-            break;
-
         case MB24:
 
-            CAN_MB_HOST.MBOX24.MDL.all = mCTX_u32DataLowTx2;
-            CAN_MB_HOST.MBOX24.MDH.all = mCTX_u32DataHighTx2;
+            CAN_MB_HOST.MBOX24.MDL.all = mCTX_u32DataLowTx1;
+            CAN_MB_HOST.MBOX24.MDH.all = mCTX_u32DataHighTx1;
 
             break;
 
         case MB25:
 
-//            CAN_MB_HOST.MBOX25.MDL.all = CAN_TX1.Tx_Data.Data.Low;
-//            CAN_MB_HOST.MBOX25.MDH.all = CAN_TX1.Tx_Data.Data.High;
+            CAN_MB_HOST.MBOX25.MDL.all = mCTX_u32DataLowTx2;
+            CAN_MB_HOST.MBOX25.MDH.all = mCTX_u32DataHighTx2;
 
             break;
 
         case MB26:
 
-//            CAN_MB_HOST.MBOX26.MDL.all = CAN_TX2.Tx_Data.Data.Low;
-//            CAN_MB_HOST.MBOX26.MDH.all = CAN_TX2.Tx_Data.Data.High;
-
             break;
 
         case MB27:
-
-//            CAN_MB_HOST.MBOX27.MDL.all = CAN_TX_EX.GAIN.RT_Data.Data.Low;
-//            CAN_MB_HOST.MBOX27.MDH.all = CAN_TX_EX.GAIN.RT_Data.Data.High;
 
             break;
 
         case MB28:
 
-//            CAN_MB_HOST.MBOX28.MDL.all = CAN_TX_EX.AUTO.RT_Data.Data.Low;
-//            CAN_MB_HOST.MBOX28.MDH.all = CAN_TX_EX.AUTO.RT_Data.Data.High;
-
             break;
 
         case MB29:
 
-//            CAN_MB_HOST.MBOX29.MDL.all = CAN_TX_EX.FAULT_LEVEL.RT_Data.Data.Low;
-//            CAN_MB_HOST.MBOX29.MDH.all = CAN_TX_EX.FAULT_LEVEL.RT_Data.Data.High;
-
             break;
 
         case MB30:
-
-//            CAN_MB_HOST.MBOX30.MDL.all = CAN_TX_EX.DAC.RT_Data.Data.Low;
-//            CAN_MB_HOST.MBOX30.MDH.all = CAN_TX_EX.DAC.RT_Data.Data.High;
 
             break;
         default:

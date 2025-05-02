@@ -46,9 +46,10 @@ typedef union{
 } S_EXOUTPUT;
 
 /* user code (bottom of header file) */
-extern uint16_T mBSW_uEstpSwitchDtc;
+//extern uint16_T mBSW_uEstpSwitchDtc;
 extern uint16_T mBSW_a11uReadInput[11];
 extern uint16_T mBSW_uExinputAll;
+extern uint16_T mM2Int_SwRev;
 
 #endif /* BSW_INCLUDE_M2_INTERRUPT_H_ */
 

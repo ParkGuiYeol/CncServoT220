@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e03_MtrCtrl_MtrCtrl'.
  *
- * Model version                  : 7.974
+ * Model version                  : 7.978
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:30:25 2025
+ * C/C++ source code generated on : Sun May 25 16:23:28 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -50,9 +50,9 @@ real32_T mCTRL_sThetaCtrl;             /* '<Root>/bE03MCTRL_mCTRL_sThetaCtrl' */
 /* Definition for custom storage class: FileScope */
 static S_E03CCTRL E03CCTRL =
 {
-    0.003F,
-    0.003F,
-    0.252538741F,
+    0.00983F,
+    0.00983F,
+    0.351123363F,
     4.0F,
     0.0F,
     0.0F,
@@ -86,12 +86,12 @@ static S_E03INIT E03INIT =
 
 static S_E03LIM E03LIM =
 {
-    17.3948269F,
-    -17.3948269F,
+    12.0711117F,
+    -12.0711117F,
     1000.0F,
     -1000.0F,
-    5.73F,
-    -5.73F,
+    6.0F,
+    -6.0F,
     2000.0F,
     -2000.0F,
     0U
@@ -101,6 +101,7 @@ static S_E03LIM E03LIM =
                                         * '<S36>/Saturation'
                                         * '<S36>/Saturation1'
                                         * '<S27>/CB_E03LIM_sCurrLim'
+                                        * '<S40>/Saturation1'
                                         * '<S41>/Saturation1'
                                         * '<S41>/Saturation2'
                                         * '<S41>/Saturation3'
@@ -124,7 +125,7 @@ static S_E03MCMV E03MCMV =
     0.0F,
     5.0F,
     0.005F,
-    2.6398592F,
+    1.89866793F,
     0.015F,
     20.0F,
     0.0F,
@@ -771,6 +772,14 @@ static void Ftn_TqSpdPstCtrl(void)
     if ((GvE03DW.uAppCtrlMde == 16U) || (GvE03DW.uAppCtrlMde == 32U))
     {
         Ftn_MtrMdeCmSpSpdCtrl();
+    }
+    else if (mCRX_sVltCurrTqCmd > E03LIM.sMaxTqSet)
+    {
+        GvE03DW.TqRefLimited = E03LIM.sMaxTqSet;
+    }
+    else if (mCRX_sVltCurrTqCmd < E03LIM.sNegMaxTqSet)
+    {
+        GvE03DW.TqRefLimited = E03LIM.sNegMaxTqSet;
     }
     else
     {

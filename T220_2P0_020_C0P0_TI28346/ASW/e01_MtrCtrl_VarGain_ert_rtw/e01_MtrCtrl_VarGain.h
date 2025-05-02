@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'e01_MtrCtrl_VarGain'.
  *
- * Model version                  : 7.579
+ * Model version                  : 7.586
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:29:20 2025
+ * C/C++ source code generated on : Sun May 25 16:20:33 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc

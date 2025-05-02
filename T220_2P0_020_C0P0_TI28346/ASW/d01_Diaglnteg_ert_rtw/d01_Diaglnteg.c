@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'd01_Diaglnteg'.
  *
- * Model version                  : 7.634
+ * Model version                  : 7.636
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 16:28:44 2025
+ * C/C++ source code generated on : Fri May  2 22:23:04 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -23,7 +23,7 @@
 #include <math.h>
 #include "c01_MainAdc.h"
 #include "b01_OSnScheduler.h"
-#include "M2_Interrupt.h"
+#include "f01_CommRx1.h"
 #include "j01_McuInit.h"
 #include "h01_MdeMgmt.h"
 #include "e03_MtrCtrl_MtrCtrl.h"
@@ -238,7 +238,7 @@ static void Ftn_T01GateAndEstpFltDtc(void)
         /*  No Action  */
     }
 
-    if (mBSW_uEstpSwitchDtc == 0U)
+    if (mCRX_uEmg == 0U)
     {
         sF01_T01_EstopSwitchFlt = Cnst_F01_EstopSwitchFlt;
     }

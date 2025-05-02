@@ -11,7 +11,7 @@
 
 /* Definition for custom storage class: FileScope */
 uint16_T mBSW_uInitNvRam = 0U;
-uint16_T mEnc_uCF = 0U;
+//uint16_T mEnc_uCF = 0U;           // Not configured in FPGA
 uint16_T mEnc_uSF = 0U;
 uint16_T mEnc_uEND = 0U;
 uint16_T mEnc_uALMC = 0U;
@@ -24,8 +24,12 @@ uint16_T mEnc_uABM1 = 0U;
 uint16_T mEnc_uABM2 = 0U;
 uint16_T mCRX_uAlarmRstZ = 0U;
 
+S_FLT u32Flt = {0};
+uint16_T FltFndDisp = 0U;
+
 /* Block signals and states (default storage) */
 static void ReadEncData(void);
+static uint16_T GetFaultCode(S_FLT fault);
 
 /* M1_Interrupt step function */
 interrupt void M1_Interrupt(void)
@@ -51,8 +55,6 @@ interrupt void M1_Interrupt(void)
     e03_MtrCtrl_MtrCtrl_step();
     e04_MtrCtrl_PwmSet_step();
 
-
-
     // PWM Output & Enable
     if ((mDIAG_uFltStat == 0U)&&(mSMDE_uFlagInverterOut != 0U))
     {
@@ -70,6 +72,10 @@ interrupt void M1_Interrupt(void)
         }
 
         mCRX_uAlarmRstZ = mCRX_uAlarmRst;
+
+        u32Flt.all = mDIAG_u32FltAll;
+
+        FltFndDisp = GetFaultCode(u32Flt);
     }
 
     // PWM Set
@@ -123,11 +129,40 @@ interrupt void M1_Offset(void)
     return;
 }
 
+uint16_T GetFaultCode(S_FLT fault)
+{
+    if (fault.bit.F01_EstopSwitchFlt)  return 2;
+    if (fault.bit.F02_IgptShrtFlt)     return 3;
+    if (fault.bit.F03_HvdcOvrVolFlt)   return 4;
+    if (fault.bit.F04_HvdcUdrVolFlt)   return 5;
+    if (fault.bit.F05_CrtSnsrFlt)      return 6;
+    if (fault.bit.F06_CrtSnsrOfsFlt)   return 7;
+    if (fault.bit.F07_CrtStallFlt)     return 8;
+    if (fault.bit.F08_CrtOvrFlt)       return 9;
+    if (fault.bit.F09_IvtTempSnsrFlt)  return 10;
+    if (fault.bit.F010_IvtTempOvrFlt)  return 11;
+    if (fault.bit.F11_MtrTempSnsrFlt)  return 12;
+    if (fault.bit.F12_MtrTempOvrFlt)   return 13;
+    if (fault.bit.F13_MtrSpdFlt)       return 14;
+    if (fault.bit.F14_MtrLineOpnFlt)   return 15;
+    if (fault.bit.F15_CommFlt)         return 16;
+    if (fault.bit.F16_InitNvRam)       return 17;
+
+    return 0;
+}
 
 void ReadEncData(void)
 {
-    mEnc_uCF    = FPGA_Receive(0x12);
-    mEnc_uSF    = FPGA_Receive(0x13);
+    // ==================== uSF: Status Field =========================//
+    // ca1, ca0, ea1, ea0, dd3, dd2, dd1, dd0 (Data LSB first)
+    // ca1, ca0: Communication Alarm
+    // ea1, ea0: Encoder Alarm
+    //  -. ea0: Status field£¨SF£©Error
+    //  -. ea1: PS error, Battery alarm, MT error and BUSY flag are outputted in OR logic.
+    // ee0 ~ dd3: Information(All fixed to 0)
+
+    // mEnc_uCF    = FPGA_Receive(0x12);    // Not configured in FPGA
+    mEnc_uSF    = FPGA_Receive(0x13);       // Typical value for encoder error
     mEnc_uEND   = FPGA_Receive(0x17);
     mEnc_uALMC  = FPGA_Receive(0x1B);
     mEnc_uCRC   = FPGA_Receive(0x1C);

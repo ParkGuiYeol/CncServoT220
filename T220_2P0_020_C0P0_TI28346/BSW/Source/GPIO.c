@@ -24,8 +24,8 @@ void Init_GPIO(void)
 	GpioCtrlRegs.GPAQSEL2.all = 0xFC000000;
 	GpioCtrlRegs.GPAQSEL1.all = 0x3C000000;	// GPIOA Qualification Mode				; ACQCLK = SAMPCLK/GPAQSELn			: 0(/1), 1(/2), 2(/5), 3(ASYNCH)
 	GpioCtrlRegs.GPAPUD.all = 0xFF4FFFFF;	// GPIOA Internal Pull-up				; 0(Enable), 1(Disable)
-	GpioDataRegs.GPACLEAR.all = 0xE3400FC0;	// GPIOA Initial Value of GPIOx Output	; 1(Clear)
-	GpioDataRegs.GPASET.all = 0x1C009000;	// GPIOA Initial Value of GPIOx Output	; 1(Set)
+	GpioDataRegs.GPACLEAR.all = 0xE3400E40;	// GPIOA Initial Value of GPIOx Output	; 1(Clear)
+	GpioDataRegs.GPASET.all = 0x1C009180;	// GPIOA Initial Value of GPIOx Output	; 1(Set)
 
 	/******************************************************************** GPIOA MUX2 ********************************************************************/
 	// GPIO31					01					0(GPIO31), 			1(CANTXA[O]),		2(XA17[O]),			3(XA17[O])			¡æ CANTXA
@@ -107,9 +107,9 @@ void Init_GPIO(void)
 	//	11	RS485_RXD_DSP		0					0					00					1					1					0
 	//	10	RS485_DIR_DSP		1					0					00					1					1					0
 	//	09	RS485_TXD_DSP		1					0					00					1					1					0
-	//	08	FND_DIG1			1					0					00					1					1					0
+	//	08	FND_DIG1			1					0					00					1					0					1
 
-	//	07	FND_DIG0			1					0					00					1					1					0
+	//	07	FND_DIG0			1					0					00					1					0					1
 	//	06	ADS7865I_CLK		1					0					00					1					1					0
 	//	05	EPWM3B				1					0					00					1					0					0
 	//	04	EPWM3A				1					0					00					1					0					0
@@ -130,8 +130,8 @@ void Init_GPIO(void)
 	GpioCtrlRegs.GPBQSEL1.all = 0x0000FF30;
 	GpioCtrlRegs.GPBQSEL2.all = 0x00000000;		// GPIOB Qualification Mode				; ACQCLK = SAMPCLK/GPAQSELn			: 0(/1), 1(/2), 2(/5), 3(ASYNCH)
 	GpioCtrlRegs.GPBPUD.all = 0xFFFFFFFF;		// GPIOB Internal Pull-up				; 0(Enable), 1(Disable)
-	GpioDataRegs.GPBCLEAR.all = 0x000B002C;		// GPIOB Initial Value of GPIOx Output	; 1(Clear)
-	GpioDataRegs.GPBSET.all = 0xFF000010;		// GPIOB Initial Value of GPIOx Output	; 1(Set)
+	GpioDataRegs.GPBCLEAR.all = 0x000B0000;		// GPIOB Initial Value of GPIOx Output	; 1(Clear)
+	GpioDataRegs.GPBSET.all = 0xFF00003C;		// GPIOB Initial Value of GPIOx Output	; 1(Set)
 
 	/******************************************************************** GPIOB MUX2 ******************************************************************/
 	// GPIO63					00					0(GPIO63), 			1(SCITXDC[O]),		2(XD16[I/O]),		3(EPWM9A[O])		FND_D7
@@ -216,11 +216,11 @@ void Init_GPIO(void)
 
 	//	39	ADDR16				0					0					00					1					0					0
 	//	38	XWR(/XWE0)			0					0					00					1					0					0
-	//	37	FND_DIG5    		1					0					00					1					1					0
+	//	37	FND_DIG5    		1					0					00					1					0					1
 	//	36	XCS0				1					0					00					1					0					1
 
-	//	35	FND_DIG4			1					0					00					1					1					0
-	//	34	FND_DIG3			1					0					00					1					1					0
+	//	35	FND_DIG4			1					0					00					1					0					1
+	//	34	FND_DIG3			1					0					00					1					0					1
 	//	33	SCLA(I2C_CLA)		0					0					00					1					0					0
 	//	32	SDAA(I2C_SDA)		0					0					00					1					0					0
 

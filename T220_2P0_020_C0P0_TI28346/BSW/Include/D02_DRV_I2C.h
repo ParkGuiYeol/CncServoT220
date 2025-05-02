@@ -13,7 +13,7 @@
 // ############################################################################################################################# //
 
 // ==========================================================  I2C ADD ======================================================== //
-#define     USED_MARK                       0x06                    // EEPROM USED MARK SIGN
+#define     USED_MARK                       0x05                    // EEPROM USED MARK SIGN
 #define     EEP_MARK                        0x01                    // EEPROM USED MARK ADDRESS
 
 #define     I2C_SLAVE_ADDR                  0x50                    // SLAVE ADDRESS
@@ -57,7 +57,7 @@
 #define     POS_ORIGIN_5                    24              // PD024: 엔코더 타잎(0: Tamagawa ABS, 1: Inc 2000)
 #define     Gear_Ratio                      25              // PD025: 감속비
 #define     Turret_No_Of_Tool               26              // PD026: 터렛 공구수
-#define     S_Curve_Flag                    27              // PD027: S Curve 사용
+#define     FndDispNum                      27              // PD027: FND Display Number
 #define     S_Curve_Gain                    28              // PD028: S Curve 게인(Turret 초기 구동시 S 커브 적용 속도)
 #define     Encoder_Type                    29              // PD029: 엔코더 타잎(0: Tamagawa ABS, 1: Inc 2000)
 

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'h01_MdeMgmt'.
  *
- * Model version                  : 3.570
+ * Model version                  : 3.576
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat Apr 19 17:45:23 2025
+ * C/C++ source code generated on : Sun May 25 16:22:38 2025
  * Created by: System Research Team
  *
  * Target selection: ert.tlc
@@ -127,6 +127,7 @@ StrH01DW;
 typedef struct
 {
     real32_T bH01SMDE_mSMDE_sPstRef;   /* '<Root>/bH01SMDE_mSMDE_sPstRef' */
+    uint16_T bH01SMDE_mSMDE_uOrgNotDef;/* '<Root>/bH01SMDE_mSMDE_uOrgNotDef' */
     X_H01EXO bH01SMDE_mSMDE_uExOut;    /* '<Root>/bH01SMDE_mSMDE_uExOut' */
 }
 StrH01ExtY;
@@ -165,7 +166,6 @@ extern real32_T mSMDE_sAngleErrDisp; /* '<Root>/bH01SMDE_mSMDE_sAngleErrDisp' */
 extern real32_T mSMDE_sRefAngle;       /* '<Root>/bH01SMDE_mSMDE_sRefAngle' */
 extern real32_T mSMDE_sActAngle;       /* '<Root>/bH01SMDE_mSMDE_sActAngle' */
 extern real32_T mSMDE_sAngleErr;       /* '<Root>/bH01SMDE_mSMDE_sAngleErr' */
-extern uint16_T mSMDE_uOrgNotDef;      /* '<Root>/bH01SMDE_mSMDE_uOrgNotDef' */
 
 /* Model entry point functions */
 extern void h01_MdeMgmt_initialize(void);

@@ -23,32 +23,32 @@ uint16_T main_temp0 = 0U;
 uint16_T Flag_EEPROM_Busy = 0U;
 
 int16 EEP_Load0 = 0, EEP_Load1 = 0;
-unsigned int eep_cnt = 0;
-unsigned int eep_addr = 0;
-unsigned int eep_inter_addr = 0;
-unsigned int eep_data = 0;
-char Flag_Init = 0;
+uint16_T eep_cnt = 0;
+uint16_T eep_addr = 0;
+uint16_T eep_inter_addr = 0;
+uint16_T eep_data = 0;
+uint16_T uFlag_Init = 0;
 
-float PD[Param_Menu_Item_Max];              // Parameters Define
-float PC[Param_Menu_Item_Max];              // Parameters Invariable Value
-float P1[Param_Menu_Item_Max];              // Parameters Control Value
-float P2[Param_Menu_Item_Max];              // Parameters Control Value
+real32_T PD[Param_Menu_Item_Max];              // Parameters Define
+real32_T PC[Param_Menu_Item_Max];              // Parameters Invariable Value
+real32_T P1[Param_Menu_Item_Max];              // Parameters Control Value
+real32_T P2[Param_Menu_Item_Max];              // Parameters Control Value
 
 // Rounded value
 //                        0, 1,   2,   3,   4,   5,   6,   7,   8,   9,       10,  11,  12,   13,   14,   15,   16, 17,   18,    19,      20,  21,  22,  23,   24,   25,  26,    27,   28,   29
-float PD_RV[30]     = {   1, 1, 100, 100, 100, 100, 100,  10, 100,  10,      100,  10, 100, 1000, 1000, 1000, 1000,  1,    1, 10000,       1,   1,   1,   1,    1, 1000,   1,     1,    1,    1};
-float PC_RV[30]     = { 100, 1, 100,   1, 100, 100, 100, 100, 100, 100,        1,   1,  10,   10,  100,    1,   10, 10,   10,    10,       1,   1,  10,  10, 1000, 1000, 1000, 1000, 1000, 1000};
-float P1_RV[30]     = {   1, 1,   1, 100, 100, 100, 100,   1,   1, 100,      100, 100, 100,  100,    1,    1,   10, 10,   10,    10,      10,   1,   1,   1,    1,    1,    1,    1,    1,    1};
-float P2_RV[30]     = {   1, 1,   1,   1,   1,   1,   1,   1,   1,   1,        1,   1,   1,    1,    1,    1,    1,  1,   100,  100,     100, 100, 100, 100,  100,  100,  100,    1,    1, 1000};
+real32_T PD_RV[30]     = {   1, 1, 100, 100, 100, 100, 100,  10, 100,  10,      100,  10, 100, 1000, 1000, 1000, 1000,  1,    1, 10000,       1,   1,   1,   1,    1, 1000,   1,     1,    1,    1};
+real32_T PC_RV[30]     = { 100, 1, 100,   1, 100, 100, 100, 100, 100, 100,        1,   1,  10,   10,  100,    1,   10, 10,   10,    10,       1,   1,  10,  10, 1000, 1000, 1000, 1000, 1000, 1000};
+real32_T P1_RV[30]     = {   1, 1,   1, 100, 100, 100, 100,   1,   1, 100,      100, 100, 100,  100,    1,    1,   10, 10,   10,    10,      10,   1,   1,   1,    1,    1,    1,    1,    1,    1};
+real32_T P2_RV[30]     = {   1, 1,   1,   1,   1,   1,   1,   1,   1,   1,        1,   1,   1,    1,    1,    1,    1,  1,   100,  100,     100, 100, 100, 100,  100,  100,  100,    1,    1, 1000};
 
 // 1/Rounded value
 //                         0, 1,    2,    3,    4,    5,    6,    7,    8,    9,       10,   11,   12,    13,    14,    15,    16,  17,    18,     19,       20,   21,   22,   23,    24,    25,    26,    27,    28,    29
-float PD_DP[30]     = {    1, 1, 0.01, 0.01, 0.01, 0.01, 0.01,  0.1, 0.01,  0.1,     0.01,  0.1, 0.01, 0.001, 0.001, 0.001, 0.001,   1,     1, 0.0001,        1,    1,    1,     1,     1, 0.001,     1,     1,     1,     1};
-float PC_DP[30]     = { 0.01, 1, 0.01,    1, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01,        1,    1,  0.1,   0.1,  0.01,     1,   0.1, 0.1,   0.1,    0.1,        1,    1,  0.1,   0.1, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001};
-float P1_DP[30]     = {    1, 1,    1, 0.01, 0.01, 0.01, 0.01,    1,    1, 0.01,     0.01, 0.01, 0.01,  0.01,     1,     1,   0.1, 0.1,   0.1,    0.1,      0.1,    1,    1,     1,     1,     1,     1,     1,     1,     1};
-float P2_DP[30]     = {    1, 1,    1,    1,    1,    1,    1,    1,    1,    1,        1,    1,    1,     1,     1,     1,     1,   1,  0.01,   0.01,     0.01, 0.01, 0.01,  0.01,  0.01,  0.01,  0.01,     1,     1, 0.001};
+real32_T PD_DP[30]     = {    1, 1, 0.01, 0.01, 0.01, 0.01, 0.01,  0.1, 0.01,  0.1,     0.01,  0.1, 0.01, 0.001, 0.001, 0.001, 0.001,   1,     1, 0.0001,        1,    1,    1,     1,     1, 0.001,     1,     1,     1,     1};
+real32_T PC_DP[30]     = { 0.01, 1, 0.01,    1, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01,        1,    1,  0.1,   0.1,  0.01,     1,   0.1, 0.1,   0.1,    0.1,        1,    1,  0.1,   0.1, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001};
+real32_T P1_DP[30]     = {    1, 1,    1, 0.01, 0.01, 0.01, 0.01,    1,    1, 0.01,     0.01, 0.01, 0.01,  0.01,     1,     1,   0.1, 0.1,   0.1,    0.1,      0.1,    1,    1,     1,     1,     1,     1,     1,     1,     1};
+real32_T P2_DP[30]     = {    1, 1,    1,    1,    1,    1,    1,    1,    1,    1,        1,    1,    1,     1,     1,     1,     1,   1,  0.01,   0.01,     0.01, 0.01, 0.01,  0.01,  0.01,  0.01,  0.01,     1,     1, 0.001};
 
-const float Const_PD[Param_Menu_Item_Max]=      // Constant PD(Parameters Define)     (Turret: ¡ß, ATC: ¡Þ)
+const real32_T Const_PD[Param_Menu_Item_Max]=      // Constant PD(Parameters Define)     (Turret: ¡ß, ATC: ¡Þ)
 {
         3000,       // PD000: Rated_Speed                                                   ¡ß   ¡Þ
         3800,       // PD001: Max_Speed                                                     ¡ß   ¡Þ
@@ -71,11 +71,11 @@ const float Const_PD[Param_Menu_Item_Max]=      // Constant PD(Parameters Define
         50000,      // PD018: Spd_Accel/Decel Time                                          ¡ß   ¡Þ
         3.1803,     // PD019: Theta_offset <<<<<<<<<< Motor Align                           ¡ß   ¡Þ
 
-        0,          // PD020: Tamagawa_Multi_enc1                                          ¡ß   ¡Þ
-        0,          // PD021: Tamagawa_Multi_enc2                                          ¡ß   ¡Þ
-        0,          // PD022: Tamagawa_Multi_enc3                                          ¡ß   ¡Þ
-        0,          // PD023: Tamagawa_Multi_enc4                                          ¡ß   ¡Þ
-        0,          // PD024: Tamagawa_Multi_enc5                                          ¡ß   ¡Þ
+        4,          // PD020: Tamagawa_Multi_enc1                                          ¡ß   ¡Þ
+        4,          // PD021: Tamagawa_Multi_enc2                                          ¡ß   ¡Þ
+        4,          // PD022: Tamagawa_Multi_enc3                                          ¡ß   ¡Þ
+        4,          // PD023: Tamagawa_Multi_enc4                                          ¡ß   ¡Þ
+        5,          // PD024: Tamagawa_Multi_enc5                                          ¡ß   ¡Þ
 
         50.0,       // PD025: Gear_Ratio                                                    ¡ß   ¡Þ
         28,         // PD026: Turret_No_Of_Tool                                             ¡ß
@@ -85,7 +85,7 @@ const float Const_PD[Param_Menu_Item_Max]=      // Constant PD(Parameters Define
 };
 
 // PC
-const float Const_PC[Param_Menu_Item_Max]=      // Constant PC(Parameters Control)
+const real32_T Const_PC[Param_Menu_Item_Max]=      // Constant PC(Parameters Control)
 {
         20.0,       // PC000: CCG_Kpc                                                       ¡ß   ¡Þ
         12000,      // PC001: CCG_Kic                                                       ¡ß   ¡Þ
@@ -115,7 +115,7 @@ const float Const_PC[Param_Menu_Item_Max]=      // Constant PC(Parameters Contro
         0,          // PC019: PCG_Kdd_2
 
         500,        // PC020: Pos_Gain_ADJ_Speed1                                           ¡ß   ¡Þ
-        100,            // PC021: Pos_Gain_ADJ_Speed2                                           ¡ß   ¡Þ
+        100,        // PC021: Pos_Gain_ADJ_Speed2                                           ¡ß   ¡Þ
         20.0,       // PC022: Pos_Gain_ADJ_TRQ1
         80.0,       // PC023: Pos_Gain_ADJ_TRQ2
 
@@ -128,7 +128,7 @@ const float Const_PC[Param_Menu_Item_Max]=      // Constant PC(Parameters Contro
 };
 
 // P1
-const float Const_P1[Param_Menu_Item_Max]=      // Constant P1(PARAMETERS Bank 1)
+const real32_T Const_P1[Param_Menu_Item_Max]=      // Constant P1(PARAMETERS Bank 1)
 {
         20,         // P1000: Stop_Position1_Offset                                             ¡Þ
         20,         // P1001: Stop_Position2_Offset                                             ¡Þ
@@ -169,7 +169,7 @@ const float Const_P1[Param_Menu_Item_Max]=      // Constant P1(PARAMETERS Bank 1
 };
 
 // P2
-const float Const_P2[Param_Menu_Item_Max]=      // Constant P2(PARAMETERS Bank 2)
+const real32_T Const_P2[Param_Menu_Item_Max]=      // Constant P2(PARAMETERS Bank 2)
 {
         400,        // P2000: CEND_Offset                                                       ¡Þ
         0,          // P2001: Pre_Set_Point_Calc                                                ¡Þ
@@ -381,7 +381,7 @@ void PD_Read(void)
         eep_data = eep_data << 8;
         eep_data = eep_data & 0xff00;
         main_temp0 = (main_temp0 | eep_data);
-        PD[eep_cnt] = (float)main_temp0 * PD_DP[eep_cnt];
+        PD[eep_cnt] = (real32_T)main_temp0 * PD_DP[eep_cnt];
 
         eep_addr++;
         eep_cnt++;
@@ -406,9 +406,9 @@ void PC_Read(void)
         eep_data = eep_data << 8;
         eep_data = eep_data & 0xff00;
         main_temp0 = (main_temp0 | eep_data);
-        PC[eep_cnt] = ((float)main_temp0) * 0.1;
+        PC[eep_cnt] = ((real32_T)main_temp0) * 0.1;
 
-        PC[eep_cnt] = ((float)main_temp0)*PC_DP[eep_cnt];                       // dPCM1_KP: 0.0007, Decimal Point 4
+        PC[eep_cnt] = ((real32_T)main_temp0)*PC_DP[eep_cnt];                       // dPCM1_KP: 0.0007, Decimal Point 4
 
         eep_addr++;
         eep_cnt++;
@@ -436,7 +436,7 @@ void P1_Read(void)
         eep_data = eep_data & 0xff00;
         main_temp0 = (main_temp0 | eep_data);
 
-        P1[eep_cnt] = (float)main_temp0 * P1_DP[eep_cnt];
+        P1[eep_cnt] = (real32_T)main_temp0 * P1_DP[eep_cnt];
 
         eep_addr++;
 
@@ -464,7 +464,7 @@ void P2_Read(void)
         eep_data = eep_data & 0xff00;
         main_temp0 = (main_temp0 | eep_data);
 
-        P2[eep_cnt] = (float)main_temp0 * P2_DP[eep_cnt];
+        P2[eep_cnt] = (real32_T)main_temp0 * P2_DP[eep_cnt];
 
         eep_addr++;
 
@@ -514,7 +514,7 @@ void Param_Init(void)
 void PD_Save(void)                                                          // Parameters Define Save
 {
     Flag_EEPROM_Busy = 1;
-    mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
+    //mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
     PWM1_OFF;
 
     eep_cnt = 0;                                                            // Loop counter initialize.
@@ -544,7 +544,7 @@ void PD_Save(void)                                                          // P
 void PC_Save(void)
 {
     Flag_EEPROM_Busy = 1;
-    mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
+//    mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
     PWM1_OFF;
 
     eep_cnt = 0;                                                            // Loop counter initialize.
@@ -576,7 +576,7 @@ void PC_Save(void)
 void P1_Save(void)
 {
     Flag_EEPROM_Busy = 1;
-    mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
+//    mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
     PWM1_OFF;
 
     eep_cnt = 0;                                                            // Loop counter initialize.
@@ -609,7 +609,7 @@ void P1_Save(void)
 void P2_Save(void)
 {
     Flag_EEPROM_Busy = 1;
-    mBSW_uInitNvRam = 1U;                                                   // The initial data save mode of the EEPROM. The user has to reboot the drive.
+//    mBSW_uInitNvRam = 1U;                                                   // The initial data save mode of the EEPROM. The user has to reboot the drive.
     PWM1_OFF;
 
     eep_cnt = 0;                                                            // Loop counter initialize.
@@ -640,7 +640,18 @@ void P2_Save(void)
 
 void Eep_Init(void)
 {
-    Eeprom_Delay(5000);                                                     // 5000*10usec=50msec power on delay
+    //Eeprom_Delay(5000);                                                     // 5000*10usec=50msec power on delay
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
+    DELAY_US(1000);
 
     eep_cnt = 0;
 
@@ -650,7 +661,7 @@ void Eep_Init(void)
 
         if((EEP_Load0 == USED_MARK) && (EEP_Load1 == USED_MARK))            // 1st and 2nd used mark check
         {
-            Flag_Init = 1;
+            uFlag_Init = 1;
             eep_cnt = 2;                                                    // Go out to the next step.
         }
 
@@ -658,7 +669,7 @@ void Eep_Init(void)
 
     } while(eep_cnt<3);
 
-    if(Flag_Init == 1)
+    if(uFlag_Init == 1)
     {
         PD_Read();
         PC_Read();
@@ -687,7 +698,7 @@ void Eep_Init(void)
 void Bftn_SaveOriginData(void)
 {
     // Active uFlagSaveEncOrigin
-    if((mSMDE_uFlagSaveEncOrigin == 1U)||(uFlagSaveEncOriginZ == 0U))
+    if((mSMDE_uFlagSaveEncOrigin == 1U)&&(uFlagSaveEncOriginZ == 0U))
     {
         mI2c_uFlagSaveEncOrigin = 1U;
     }
@@ -705,19 +716,22 @@ void Bftn_SaveOriginData(void)
 
         PD_Save();
         mI2c_uFlagSaveEncOrigin = 0U;
-        mBSW_uInitNvRam = 1U;                                               // The initial data save mode of the EEPROM. The user has to reboot the drive.
     }
 }
+
+//volatile uint16_T uPgy = 0U;
 
 void Bftn_ResetEncMultiTurn(void)
 {
     // Active uFlagSaveEncOrigin
-    if((mSMDE_uFlagResetEnc == 1U)||(uFlagResetEncZ == 0U))
+    if((mSMDE_uFlagResetEnc == 1U)&&(uFlagResetEncZ == 0U))
     {
         mI2c_uFlagResetEnc = 1U;
     }
 
     uFlagResetEncZ = mSMDE_uFlagResetEnc;
+
+    // mI2c_uFlagResetEnc = uPgy;
 
     if(mI2c_uFlagResetEnc == 1U)
     {
@@ -728,8 +742,7 @@ void Bftn_ResetEncMultiTurn(void)
         else
         {
             mI2c_uFlagResetEnc = 0U;
-            mBSW_uInitNvRam = 1U;                                           // The initial data save mode of the EEPROM. The user has to reboot the drive.
-//            Mx->TI_Cont->Po_ref = Position;
+//          uPgy = 0U;
         }
     }
 }

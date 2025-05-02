@@ -24,8 +24,9 @@
 #include "j01_McuInit.h"
 
 /* user code (bottom of header file) */
+extern uint16_T FltFndDisp;
 extern uint16_T mBSW_uInitNvRam;
-extern uint16_T mEnc_uCF;
+//extern uint16_T mEnc_uCF;
 extern uint16_T mEnc_uSF;
 extern uint16_T mEnc_uEND;
 extern uint16_T mEnc_uALMC;
